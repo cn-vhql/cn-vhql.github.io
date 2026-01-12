@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="你上学时候是不是觉得数学统计课特催眠？ 公式一堆，图表乱飞，老师讲得比寺庙早课还无聊。你以为这玩意儿除了考试屁用没有？ 错了，大错特错。 统计学的本质，根本不是什么数学游戏，而是一整套看穿世界真相的屠龙术。这门课本应该改名叫《韭菜防割指南》或者《镰刀使用说明书》。 今天，我就带你扒开统计学的遮羞布，用你能听懂的大白话来唠唠，这玩意儿到底是怎么让聪明人挣钱，让老实人当韭菜的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计学的真相：看懂这玩意，你才能不当韭菜">
+<meta property="og:url" content="https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="你上学时候是不是觉得数学统计课特催眠？ 公式一堆，图表乱飞，老师讲得比寺庙早课还无聊。你以为这玩意儿除了考试屁用没有？ 错了，大错特错。 统计学的本质，根本不是什么数学游戏，而是一整套看穿世界真相的屠龙术。这门课本应该改名叫《韭菜防割指南》或者《镰刀使用说明书》。 今天，我就带你扒开统计学的遮羞布，用你能听懂的大白话来唠唠，这玩意儿到底是怎么让聪明人挣钱，让老实人当韭菜的。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-09T09:37:11.000Z">
+<meta property="article:modified_time" content="2026-01-09T11:50:17.903Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="方法论">
+<meta property="article:tag" content="理财">
+<meta property="article:tag" content="读书">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/","path":"2023/09/09/统计学的真相：看懂这玩意，你才能不当韭菜/","title":"统计学的真相：看懂这玩意，你才能不当韭菜"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>统计学的真相：看懂这玩意，你才能不当韭菜 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%EF%BC%9A%E8%8F%9C%E5%B8%82%E5%9C%BA%E5%A4%A7%E5%A6%88%E7%9A%84%E6%99%BA%E6%85%A7"><span class="nav-number">1.</span> <span class="nav-text">一、描述统计：菜市场大妈的智慧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%8E%A8%E6%96%AD%E7%BB%9F%E8%AE%A1%EF%BC%9A%E7%BB%8D%E5%85%B4%E5%B8%88%E7%88%B7%E7%9A%84%E5%BF%83%E7%9C%BC%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">二、推断统计：绍兴师爷的心眼子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%9B%9E%E5%BD%92%E4%B8%8E%E9%A2%84%E6%B5%8B%EF%BC%9A%E7%AE%97%E5%91%BD%E5%85%88%E7%94%9F%E7%9A%84%E6%95%B0%E5%AD%A6%E5%A4%96%E6%8C%82"><span class="nav-number">3.</span> <span class="nav-text">三、回归与预测：算命先生的数学外挂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%EF%BC%9A%E7%BB%99%E6%9C%AA%E6%9D%A5%E7%AE%97%E5%8D%A6%E7%9A%84%E9%AB%98%E7%BA%A7%E6%89%8B%E8%89%BA"><span class="nav-number">4.</span> <span class="nav-text">四、时间序列：给未来算卦的高级手艺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD%EF%BC%9A%E4%BD%A0%E7%9A%84%E6%80%9D%E7%BB%B4%EF%BC%8C%E6%89%8D%E6%98%AF%E7%BB%88%E6%9E%81%E6%AD%A6%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">结语：你的思维，才是终极武器</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="统计学的真相：看懂这玩意，你才能不当韭菜 | 知行录">
+      <meta itemprop="description" content="你上学时候是不是觉得数学统计课特催眠？
+公式一堆，图表乱飞，老师讲得比寺庙早课还无聊。你以为这玩意儿除了考试屁用没有？
+错了，大错特错。
+统计学的本质，根本不是什么数学游戏，而是一整套看穿世界真相的屠龙术。这门课本应该改名叫《韭菜防割指南》或者《镰刀使用说明书》。
+今天，我就带你扒开统计学的遮羞布，用你能听懂的大白话来唠唠，这玩意儿到底是怎么让聪明人挣钱，让老实人当韭菜的。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          统计学的真相：看懂这玩意，你才能不当韭菜
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-09 17:37:11" itemprop="dateCreated datePublished" datetime="2023-09-09T17:37:11+08:00">2023-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-09 19:50:17" itemprop="dateModified" datetime="2026-01-09T19:50:17+08:00">2026-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">读书</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">你上学时候是不是觉得数学统计课特催眠？
+公式一堆，图表乱飞，老师讲得比寺庙早课还无聊。你以为这玩意儿除了考试屁用没有？
+错了，大错特错。
+统计学的本质，根本不是什么数学游戏，而是一整套看穿世界真相的屠龙术。这门课本应该改名叫《韭菜防割指南》或者《镰刀使用说明书》。
+今天，我就带你扒开统计学的遮羞布，用你能听懂的大白话来唠唠，这玩意儿到底是怎么让聪明人挣钱，让老实人当韭菜的。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="一、描述统计：菜市场大妈的智慧">一、描述统计：菜市场大妈的智慧</h3>
+<p>咱们先从最简单的说起。描述统计，就是<strong>看热闹不嫌事大</strong>的围观艺术。</p>
+<p><strong>1. 平均数、中位数、众数：村里首富的传说</strong></p>
+<p>村里年收入数据：张三年入 5 万，李四 6 万，王五 7 万，赵六 8 万，还有那个搞电商的马老七，年入 1000 万。</p>
+<p><strong>平均数</strong>算一下：(5 + 6+7 + 8+1000)÷5 = 205.2 万。村长大喇叭一喊：“咱们村人均年收入 205 万！” 外地姑娘一听，好家伙，赶紧嫁过来。</p>
+<p>这就是 ​<strong>平均数陷阱</strong>。一个马老七，把全村数据都拉高了，其他四个人看着自己手里那几万块钱，心里骂娘。</p>
+<p><strong>中位数</strong>呢？把这五个数从小到大排：5，6，7，8，1000。正中间那个是 7。这个数靠谱多了，能代表 “大多数普通村民” 的真实水平。</p>
+<p>​<strong>众数</strong>？就是出现次数最多的。咱们这儿每个收入都不一样，没有众数。但如果村里大部分人都赚 5 万，那众数就是 5 万，这代表了 “最普遍的现状”。</p>
+<p>听懂了吗？下次再有人用 “平均工资”、“人均住房面积” 忽悠你，你先问问：中位数是多少？数据是不是被几个马老七给 “平均” 上去了？</p>
+<p><strong>2. 方差、标准差：村里贫富差距大不大</strong></p>
+<p>光知道大家赚多少钱还不行，得知道大家过得 ​<strong>稳不稳</strong>。</p>
+<p>张三李四王五赵六，今年都赚 5 万，明年也都赚 5 万，后年还是 5 万。这叫 ​<strong>方差小、标准差小</strong>，日子稳得像老狗，虽然发不了财，但也饿不死。</p>
+<p>再看另一个村：A 今年赚 20 万，明年亏 10 万，后年赚 50 万，大后年破产。这叫 ​<strong>方差极大、标准差冲天</strong>。刺激是真刺激，跳楼也是真快。</p>
+<p>金融里管这叫 ​<strong>波动率</strong>。方差大、标准差大，就是波动猛，风险高。你买那种上蹿下跳跟心电图似的股票，就要有今晚会所嫩模、明早下海干活的觉悟。</p>
+<p><strong>3. 偏度和峰度：数据长得歪不歪</strong></p>
+<p>​<strong>偏度</strong>​，就是数据长歪了没。大部分数据都挤在左边，就右边拖着几个马老七那样的超级富豪，这叫 ​<strong>右偏分布</strong>​（尾巴在右）。这时候平均数 &gt; 中位数 &gt; 众数。用平均数代表大家，纯粹是耍流氓。</p>
+<p>​<strong>峰度</strong>​，就是数据扎不扎堆。大家都集中在平均值附近，图看起来又高又瘦，这叫 ​<strong>尖峰</strong>​，说明群体很同质。要是数据铺得开，图看起来矮胖，这叫 ​<strong>低峰</strong>，说明群体五花八门，干啥的都有。</p>
+<p>金融数据，比如股价收益率，基本都是<strong>尖峰厚尾</strong> —— 大部分时候小涨小跌（扎堆在中间），但时不时给你来个暴跌暴涨（尾巴很厚）。翻译成人话：<strong>平时稳如狗，偶尔杀猪盘</strong>。</p>
+<hr>
+<h3 id="二、推断统计：绍兴师爷的心眼子">二、推断统计：绍兴师爷的心眼子</h3>
+<p>如果描述统计是村里会计记账，那推断统计就是从绍兴来的师爷，专门从账本里<strong>推测你没写的秘密</strong>，甚至<strong>预测你明年会不会造反</strong>。</p>
+<p><strong>1. 抽样分布：尝一勺锅里的汤</strong></p>
+<p>你想知道一锅汤咸不咸，不需要把整锅喝完。拿勺子搅一搅，舀一勺尝，就知道了。这一勺，就是 ​<strong>样本</strong>​。整锅汤，就是 ​<strong>总体</strong>。</p>
+<p>但你会说，万一我舀到的是上面没盐的清汤呢？所以，聪明的师爷发明了<strong>抽样分布</strong>理论。</p>
+<p>​<strong>正态分布</strong>：最常见的分布。就像人的身高，特别矮和特别高的都少，大部分集中在中间。很多自然和社会现象都近似它，所以它叫 “正常” 分布。</p>
+<p>​<strong>t 分布</strong>​：当你 ​<strong>样本很小</strong>（比如你只尝了 3 勺汤），或者你不知道总体这锅汤的咸淡（方差）时，就要用 t 分布。它比正态分布 “尾巴更厚”，意思是对小样本更谨慎，生怕你尝的几勺不准，所以留的犯错余地更大。样本量大于 30，t 分布就和正态分布差不多了。</p>
+<p>​<strong>卡方分布</strong>：用来检验 “分类” 上的差异。比如，你声称你的骰子是均匀的（每个点数出现概率 1 / 6）。我扔了 60 次，结果 1 点出现了 20 次。这合理吗？用卡方分布一算，就能判断你这骰子是不是灌了铅。</p>
+<p>​<strong>F 分布</strong>​：专门用来比较 ​<strong>两组数据的波动（方差）是不是一样大</strong>。比如，比较 A 基金和 B 基金，哪个收益波动更剧烈（风险更大）。</p>
+<p>说白了，抽样分布就是师爷手里的 ​<strong>概率地图</strong>。他告诉你：如果你随便尝一勺，根据这张地图，你有多大概率尝到特别咸的，有多大概率判断失误。</p>
+<p><strong>2. 参数估计：猜谜也要讲基本法</strong></p>
+<p>师爷不仅要知道汤现在咸不咸，还要<strong>猜</strong>盐罐子里还剩多少盐。</p>
+<p>​<strong>点估计</strong>：就是瞎蒙一个数。“我猜这锅汤放了 5 克盐！”（用样本均值估计总体均值）。</p>
+<p>​<strong>区间估计</strong>​：就是划个范围。“我猜这锅汤的盐在 4 克到 6 克之间，我有 95% 的把握！” 这个范围叫 ​<strong>置信区间</strong>​。95% 叫 ​<strong>置信水平</strong>。</p>
+<p>为什么不是 100%？因为师爷不是神仙。他留了 5% 的犯错空间，这 5% 就是 ​<strong>显著性水平（α）</strong> ​。翻译成人话：<strong>老子话不说满，留点余地，万一你这锅汤就是个奇葩呢？</strong></p>
+<p><strong>3. 假设检验：师爷断案，专治不服</strong></p>
+<p>这是统计学的 ​<strong>灵魂</strong>​，也是镰刀割韭菜的 ​<strong>核心招式</strong>。</p>
+<p>整个逻辑像破案：</p>
+<ul>
+<li><strong>第一步：设立原假设（H0）。</strong> 默认嫌疑人无罪。“我这新药 ​<strong>没效果</strong>”（默认等于旧药）。</li>
+<li><strong>第二步：搜集证据（样本数据）。</strong> 找一群病人做实验。</li>
+<li><strong>第三步：计算 P 值。</strong> 在 “新药没效果（H0 为真）” 的假设下，计算出 “观察到当前（或更极端）实验结果” 的概率。<strong>P 值越小，说明在原假设下，当前证据越离谱。</strong></li>
+<li><strong>第四步：判决。</strong> 设定一个门槛（α，常取 5%）。如果 P 值 &lt; 5%，说明 “在原假设下，这证据太特么离谱了，小概率事件发生了！” 于是，我们 ​<strong>有理由拒绝原假设</strong>，认为新药可能有效。反之，则没证据推翻原假设。</li>
+</ul>
+<p><strong>重点来了！</strong> 这里有两种错误：</p>
+<ul>
+<li><strong>弃真错误（α 错误）：</strong> 新药本来没效，但你误判它有效。冤枉了好人。</li>
+<li><strong>取伪错误（β 错误）：</strong> 新药本来有效，但你误判它没效。放过了坏人。</li>
+</ul>
+<p>资本和商家最喜欢玩这个。比如，保健品公司做个实验，P 值 = 0.06（&gt;0.05）。他们会说：“你看，虽然没到显著水平，但趋势是好的嘛！” 这是在 ​<strong>刻意淡化 β 错误</strong>，引诱你当韭菜。</p>
+<p>而严格的药监局，必须 ​<strong>严格控制 α 错误</strong>，宁愿放过一些可能有效的药（β 错误大），也绝不能让无效的药上市害人（α 错误小）。</p>
+<p>看懂这个，你就看懂了很多商业宣传和投资骗局的底层逻辑：<strong>他们总是在混淆、美化或隐瞒假设检验的结果</strong>。</p>
+<hr>
+<h3 id="三、回归与预测：算命先生的数学外挂">三、回归与预测：算命先生的数学外挂</h3>
+<p><strong>1. 相关与回归：关联不等于因果</strong></p>
+<p>这是韭菜被割得最惨的地方。</p>
+<p>统计发现 “喝红酒” 和 “长寿”​<strong>相关</strong>。酒商狂喜，广告刷屏：“喝红酒能长寿！”</p>
+<p>但真相可能是：​<strong>喝红酒的人，往往更有钱、更有闲、更注重健康生活方式</strong>​。是 “ socioeconomic status （社会经济地位）” 这个 ​<strong>共同原因</strong>​，同时导致了 “喝红酒” 和 “长寿”。这叫 ​<strong>混淆变量</strong>。</p>
+<p><strong>相关关系，只是告诉你两个变量一起跳舞；因果关系，才告诉你谁领着谁跳。</strong></p>
+<p>你用脚趾头想想就知道，资本和媒体会拼命把 “相关” 宣传成 “因果”。因为这样才好卖货，才好制造焦虑。<strong>记住：凡是简单归因的，八成是套路。</strong></p>
+<p><strong>2. 线性回归：给散点图强行拉郎配</strong></p>
+<p>回归就是找关系。一元回归是 “老公赚钱，老婆花”。多元回归是 “老公赚钱、公婆补贴、老婆兼职，一起养家”。</p>
+<p>模型好不好，看 ​<strong>R²（决定系数）</strong> ​。R²=0.8，意思是这个模型能解释你家庭开支波动的 80%，剩下 20% 是随机因素（比如突然生病）。R² 越接近 1，模型越牛。</p>
+<p>但这里又有坑：​<strong>多重共线性</strong>。就是你找的两个 “老公”（解释变量）其实是亲兄弟（高度相关），比如 “老公的工资” 和 “老公的年终奖”。他俩提供的信息严重重叠，会导致模型估不准，分不清到底谁的功劳。这就像公司里抢功的同事，让你老板（模型）很难做。</p>
+<p><strong>F 检验</strong>是看 “老公们” 作为一个团队，有没有用。<strong>t 检验</strong>是看 “某个老公” 个人，贡献大不大。</p>
+<hr>
+<h3 id="四、时间序列：给未来算卦的高级手艺">四、时间序列：给未来算卦的高级手艺</h3>
+<p>这才是金融镰刀的 ​<strong>看家本领</strong>。</p>
+<p><strong>1. 平稳性：算命的基本前提</strong></p>
+<p>你想预测明天天气，前提是气候规律没变。如果明天突然冰河世纪，所有预测全完蛋。</p>
+<p>​<strong>平稳序列</strong>​，就是规律不变的数据。​<strong>非平稳序列</strong>，就是带着明显趋势（一直涨 / 一直跌）或周期性（夏天热冬天冷）的数据。</p>
+<p>大部分经济、金融数据（股价、GDP）都是<strong>非平稳</strong>的。想预测？先得想办法把它变平稳，常用方法就是 ​<strong>差分</strong>：用今天的价格减去昨天的价格，得到 “今日涨跌幅”。这个涨跌幅序列，往往就平稳多了。</p>
+<p>​<strong>单位根检验（ADF 检验）</strong> ​，就是官方鉴定师，专门检测你的数据 “平不平稳”。有单位根 = 不平稳，得治。</p>
+<p><strong>2. ARIMA 模型：算命的核心算法</strong></p>
+<p>这玩意儿是预测时间序列的常青树。简单理解：</p>
+<ul>
+<li><strong>AR（自回归）：</strong> 明天的股价，和今天、前天、大前天的股价有关。像不像 “历史会重演”？</li>
+<li><strong>MA（移动平均）：</strong> 明天的股价，还和今天、昨天的 “预测误差”（意外冲击）有关。像不像 “消化利空利好”？</li>
+<li><strong>I（差分）：</strong> 先把不平稳的数据 diff 一下，变平稳了再玩。</li>
+</ul>
+<p>把这三者组合起来，就是 ARIMA 模型。用它，可以基于历史，​<strong>量化地预测未来</strong>。基金公司、量化交易团队，天天就琢磨这个。</p>
+<p><strong>3. 协整与格兰杰因果：找长期饭票和真凶</strong></p>
+<ul>
+<li><strong>协整：</strong> 两口子经常吵架（短期波动），但总归在一个屋檐下过日子（长期均衡）。比如股价和净值，短期可能背离，长期一定回归。找到这种 “吵不散” 的长期关系，就能做 ​<strong>配对交易</strong>（一个高了卖，一个低了买，等它们回归）。</li>
+<li><strong>格兰杰因果：</strong> 不是说真的因果，而是 ​<strong>预测意义上的领先</strong>​。“公鸡打鸣” 格兰杰引起 “太阳升起”，因为公鸡叫能帮你预测天要亮，虽然它并不是天亮的原因。在金融市场，能找到这种领先指标，就等于拿到了 ​<strong>作弊器预览版</strong>。</li>
+</ul>
+<p><strong>4. ARCH / GARCH 模型：预测风险本身</strong></p>
+<p>这才是真正的屠龙刀。传统模型假设风险（波动）是恒定的。但现实中，金融市场的风险是 ​<strong>聚集的</strong>：今天大跌，往往明天也恐慌；风平浪静久了，可能酝酿风暴。</p>
+<p>GARCH 模型就是专门 ** 预测 “明天的波动有多大”** 的。它能告诉你，未来几天市场是继续平静，还是可能发疯。这对期权定价、风险控制（VaR）至关重要。<strong>镰刀用这个来精确计算割韭菜的刀有多快，盾牌用这个来知道该铸多厚的甲。</strong></p>
+<hr>
+<h3 id="结语：你的思维，才是终极武器">结语：你的思维，才是终极武器</h3>
+<p>看到这儿，你是不是觉得，统计学哪是什么枯燥公式？</p>
+<p>它分明是：</p>
+<ul>
+<li>看穿 “平均工资” 骗局的 ​<strong>照妖镜</strong>。</li>
+<li>识别商业实验忽悠的 ​<strong>测谎仪</strong>。</li>
+<li>分清相关与因果的 ​<strong>清醒剂</strong>。</li>
+<li>理解金融市场波动的 ​<strong>导航图</strong>。</li>
+</ul>
+<p>它不会直接告诉你明天哪只股票涨停 —— 那是神棍。但它能给你一套 ​<strong>思维框架</strong>，让你知道数据在哪里撒谎，概率在哪里站队，风险在哪里埋伏。</p>
+<p>这个世界，正越来越被数据和算法统治。不懂点统计，你看到的永远是别人想让你看到的 “平均数” 和 “显著性”。懂点统计，你至少能问出几个关键问题： <strong>“中位数呢？”“P 值多少？”“控制其他变量了吗？”“序列平稳吗？”</strong></p>
+<p>问出这些问题，你才可能从 ​<strong>信息的接收者</strong>​，变成 ​<strong>分析的参与者</strong>。</p>
+<p>别再把统计学当催眠曲了。把它当成一门 ​<strong>现代社会的防身术</strong>​。不一定能让你大富大贵，但至少能让你在眼花缭乱的世界里，​<strong>少吃点哑巴亏，少交点智商税</strong>。</p>
+<p>毕竟，<strong>当你开始用统计的眼光看世界，韭菜和镰刀的位置，可能就要换一换了。</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2023/09/09/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%9A%E7%9C%8B%E6%87%82%E8%BF%99%E7%8E%A9%E6%84%8F%EF%BC%8C%E4%BD%A0%E6%89%8D%E8%83%BD%E4%B8%8D%E5%BD%93%E9%9F%AD%E8%8F%9C/" title="统计学的真相：看懂这玩意，你才能不当韭菜">https://cn-vhql.github.io/2023/09/09/统计学的真相：看懂这玩意，你才能不当韭菜/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag"># 方法论</a>
+              <a href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag"># 读书</a>
+              <a href="/tags/%E7%90%86%E8%B4%A2/" rel="tag"># 理财</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/06/09/%E6%B5%85%E8%B0%88%E5%A4%AE%E8%A1%8C%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/" rel="prev" title="浅谈央行资产负债表">
+                  <i class="fa fa-angle-left"></i> 浅谈央行资产负债表
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/01/11/%E8%BF%99%E5%B0%B1%E6%98%AF%E7%88%B1%E6%83%85%EF%BC%8C%E6%88%91%E7%88%B1%E4%BD%A0%E5%8D%96%E9%BA%BB%E8%8A%B1%E6%83%85/" rel="next" title="这就是爱情，我爱你卖麻花情">
+                  这就是爱情，我爱你卖麻花情 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>

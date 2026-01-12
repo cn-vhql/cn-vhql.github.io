@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /categories/
+Allow: /tags/
+Allow: /archives/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /tags/
+Disallow: /fancybox/
+
+Sitemap: https://cn-vhql.github.io/sitemap.xml

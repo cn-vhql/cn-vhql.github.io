@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="老铁们，瞅瞅你周围。 你老板给你画大饼，告诉你“好好干，明年哥带你们上市”，转头就给新来的小姨子发了期权。 你刷着短视频，上头的主播声嘶力竭“家人们，这价格我亏得裤衩都没了”，然后你发现拼夕夕上同款便宜一半。 你隔壁工位的老王，天天摸鱼打游戏，年底考评居然比你高，就因为他会给领导朋友圈点赞。 憋屈吗？迷茫吗？感觉世界像个巨大的盲盒，你永远在开“谢谢惠顾”？ 别慌。不是你不行，是你没看懂这场游戏的底">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人生游戏底层代码">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="老铁们，瞅瞅你周围。 你老板给你画大饼，告诉你“好好干，明年哥带你们上市”，转头就给新来的小姨子发了期权。 你刷着短视频，上头的主播声嘶力竭“家人们，这价格我亏得裤衩都没了”，然后你发现拼夕夕上同款便宜一半。 你隔壁工位的老王，天天摸鱼打游戏，年底考评居然比你高，就因为他会给领导朋友圈点赞。 憋屈吗？迷茫吗？感觉世界像个巨大的盲盒，你永远在开“谢谢惠顾”？ 别慌。不是你不行，是你没看懂这场游戏的底">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-11T04:18:00.000Z">
+<meta property="article:modified_time" content="2026-01-11T04:18:54.472Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="方法论">
+<meta property="article:tag" content="生活">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/","path":"2026/01/11/人生游戏底层代码/","title":"人生游戏底层代码"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>人生游戏底层代码 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B9%95%EF%BC%9A%E4%BD%A0%E8%80%81%E6%9D%BF%E6%9C%80%E7%88%B1%E7%94%A8%E7%9A%84PUA%E7%A5%9E%E5%99%A8%E2%80%94%E2%80%94%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">第一幕：你老板最爱用的 PUA 神器 —— 囚徒困境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B9%95%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%91%B8%E9%B1%BC%E7%9A%84%E8%80%81%E7%8E%8B%E5%8D%87%E4%BA%86%E8%81%8C%EF%BC%9F%E2%80%94%E2%80%94%E6%99%BA%E7%8C%AA%E5%8D%9A%E5%BC%88"><span class="nav-number">2.</span> <span class="nav-text">第二幕：为什么摸鱼的老王升了职？—— 智猪博弈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B9%95%EF%BC%9A%E4%BB%8E%E5%90%88%E4%BD%9C%E7%8C%8E%E9%B9%BF%E5%88%B0%E4%BA%92%E7%9B%B8%E6%8D%85%E5%88%80%E2%80%94%E2%80%94%E7%8C%8E%E9%B9%BF%E5%8D%9A%E5%BC%88%E4%B8%8E%E6%9E%AA%E6%89%8B%E5%8D%9A%E5%BC%88"><span class="nav-number">3.</span> <span class="nav-text">第三幕：从合作猎鹿到互相捅刀 —— 猎鹿博弈与枪手博弈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B9%95%EF%BC%9A%E5%BD%93%E9%80%80%E6%97%A0%E5%8F%AF%E9%80%80%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%A9%E5%AF%B9%E6%96%B9%E4%B9%9F%E8%B5%A2%E4%B8%8D%E4%BA%86%EF%BC%9F%E2%80%94%E2%80%94%E5%8D%8F%E5%92%8C%E5%8D%9A%E5%BC%88%E4%B8%8E%E6%96%97%E9%B8%A1%E5%8D%9A%E5%BC%88"><span class="nav-number">4.</span> <span class="nav-text">第四幕：当退无可退，如何让对方也赢不了？—— 协和博弈与斗鸡博弈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BE%E5%A3%B0%EF%BC%9A%E5%AD%A6%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%8C%E4%B8%8D%E6%98%AF%E4%B8%BA%E4%BA%86%E5%BD%93%E9%95%B0%E5%88%80"><span class="nav-number">5.</span> <span class="nav-text">尾声：学博弈论，不是为了当镰刀</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="人生游戏底层代码 | 知行录">
+      <meta itemprop="description" content="老铁们，瞅瞅你周围。
+你老板给你画大饼，告诉你“好好干，明年哥带你们上市”，转头就给新来的小姨子发了期权。
+你刷着短视频，上头的主播声嘶力竭“家人们，这价格我亏得裤衩都没了”，然后你发现拼夕夕上同款便宜一半。
+你隔壁工位的老王，天天摸鱼打游戏，年底考评居然比你高，就因为他会给领导朋友圈点赞。
+憋屈吗？迷茫吗？感觉世界像个巨大的盲盒，你永远在开“谢谢惠顾”？
+别慌。不是你不行，是你没看懂这场游戏的底层代码。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          人生游戏底层代码
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-11 12:18:00 / 修改时间：12:18:54" itemprop="dateCreated datePublished" datetime="2026-01-11T12:18:00+08:00">2026-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%9D%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">思考</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">老铁们，瞅瞅你周围。
+你老板给你画大饼，告诉你“好好干，明年哥带你们上市”，转头就给新来的小姨子发了期权。
+你刷着短视频，上头的主播声嘶力竭“家人们，这价格我亏得裤衩都没了”，然后你发现拼夕夕上同款便宜一半。
+你隔壁工位的老王，天天摸鱼打游戏，年底考评居然比你高，就因为他会给领导朋友圈点赞。
+憋屈吗？迷茫吗？感觉世界像个巨大的盲盒，你永远在开“谢谢惠顾”？
+别慌。不是你不行，是你没看懂这场游戏的底层代码。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这世界运行的逻辑，压根不是什么努力就有回报，爱拼就会赢。那都是糊弄老实人的童话。</p>
+<p>它的内核，从菜市场大妈为了两毛钱扯皮，到华尔街那帮穿定制西装的秃鹫为了几百亿美金互捅刀子，用的都是同一套古老而肮脏的玩意儿 ——<strong> 博弈论。</strong></p>
+<p>别被这仨字吓着。什么冯・诺伊曼，什么约翰・纳什，听着就头大。咱不整那些虚的。</p>
+<p>你就把它理解成  <strong>“人性弱点说明书”</strong>  或者  <strong>“社会丛林砍价指南”</strong> 。</p>
+<p>今天，我就带你把这层高大上的学术遮羞布，给它一把薅下来。让你看看，那些让你吃亏、上当、憋出内伤的破事儿，背后到底藏着多少 “骚操作”。</p>
+<p>准备好了吗？系好安全带，咱们发车。</p>
+<hr>
+<h3 id="第一幕：你老板最爱用的PUA神器——囚徒困境"><strong>第一幕：你老板最爱用的 PUA 神器 —— 囚徒困境</strong></h3>
+<p>来，想象一个经典场景。</p>
+<p>你和你的好兄弟铁柱，因为偷了村口李寡妇的电动车，被请进去 “喝茶”。</p>
+<p>警察叔叔把你俩分开关，分别告诉你：</p>
+<ul>
+<li>“你要是招了，你算立功，关 3 个月。铁柱嘴硬，关他 3 年。”</li>
+<li>“但要是你俩都嘴硬，证据不足，各关 1 年。”</li>
+<li>“最坏情况，你俩都招了，那好，证据确凿，各关 2 年。”</li>
+</ul>
+<p>你心里开始盘算：</p>
+<ul>
+<li>如果铁柱那孙子讲义气，扛住了。那我招了，我只关 3 个月，美滋滋！他当冤大头关 3 年。</li>
+<li>如果铁柱那孙子把我卖了。那我必须招啊！我不招我关 3 年，我招了只关 2 年。</li>
+</ul>
+<p><strong>发现没？无论铁柱选什么，对你个人最优的选择，永远是：卖了他！</strong></p>
+<p>巧了，铁柱在隔壁小黑屋里，脑子转的跟你一样快。结果就是，你俩 “理性” 地选择了互相出卖，双双喜提 2 年牢饭。</p>
+<p><strong>这就是 “囚徒困境”。一个典型的非合作博弈。</strong></p>
+<p>现在，把场景切换到你的工位。</p>
+<p>你老板在周会上痛心疾首：“同志们！公司现在很困难！我们要共渡难关！今年取消了普调，取消了年终奖，但希望大家拿出创业精神，<strong>自愿</strong>加班！”</p>
+<p>然后，他私下拍了拍你和铁柱（对，还是那个倒霉蛋铁柱）的肩膀：“你俩是部门骨干，我很看好。明年主管位置空出来，就看谁表现更‘突出’了。”</p>
+<p>游戏开始了。</p>
+<p>你会选择 “合作”（不卷，按时下班）吗？</p>
+<p>你不敢。因为你不知道铁柱会不会当 “叛徒”（疯狂内卷，跪舔老板）。万一他卷了，你没卷，主管位置就是他的，你可能还得因为 “工作不饱和” 被优化。</p>
+<p>铁柱也是这么想的。</p>
+<p>结果就是，你俩，以及整个部门的倒霉蛋们，开始了毫无意义的内卷军备竞赛。每天表演加班到深夜，朋友圈发公司定位比发自拍还勤。工资没涨，头发掉了，身体垮了，老板的宝马换成了保时捷。</p>
+<p><strong>看明白了吗？</strong></p>
+<p>老板啥也没多花，就用一个 “主管” 的空头支票，制造了一场完美的 “囚徒困境”，让你们自发地、拼命地互相倾轧，为他创造剩余价值。</p>
+<p>这就是职场的底层逻辑之一：<strong>把合作共赢的 “猎鹿游戏”，强行降维成互相伤害的 “囚徒困境”</strong> 。</p>
+<p>怎么破局？</p>
+<p>理论上有两条路：<strong>把一次博弈变成无限次博弈</strong>，或者<strong>引入一个强有力的 “组织者” 来确保合作</strong>。</p>
+<p>说人话就是：</p>
+<ol>
+<li><strong>要么，你和你的同事们建立起革命友谊，形成 “谁当奋斗逼我们就集体孤立谁” 的潜规则</strong>（无限次博弈，背叛者长期受损）。但这点在流动性大的公司很难，总有新人想打破规则。</li>
+<li><strong>要么，你们有个硬核的工会，能摁着老板的头签协议，保障大家基本权益，让内卷失去意义</strong>（强有力的组织者）。可惜，在咱这地儿，这玩意儿比熊猫血还稀有。</li>
+</ol>
+<p>所以，现实往往很骨感。作为打工人，看穿这个局，至少能让你在被迫吃屎的时候，明白这屎是从哪个锅里盛出来的。是选择加入内卷，还是悄悄寻找不依赖单一博弈的新出路（比如发展副业），你心里得有本账。</p>
+<hr>
+<h3 id="第二幕：为什么摸鱼的老王升了职？——智猪博弈"><strong>第二幕：为什么摸鱼的老王升了职？—— 智猪博弈</strong></h3>
+<p>好了，现在你熬走了铁柱（他因为长期加班住进了 ICU），以为主管位置稳了。</p>
+<p>结果老板宣布，新主管是隔壁组天天摸鱼、上班炒股的老王。</p>
+<p>你一口老血喷在屏幕上。凭什么？！</p>
+<p>凭他懂 “智猪博弈”。</p>
+<p>这个模型更损。想象一个猪圈，有一大一小两头猪。猪圈一头是按钮，按一下另一头食槽会掉出 10 份猪食。但按按钮的猪跑回去吃，需要消耗 2 份猪食的体力。</p>
+<p>情况如下：</p>
+<ul>
+<li>大猪按按钮：大猪吃 6 份（10-2-2，因为小猪先吃），小猪吃 4 份，白嫖。</li>
+<li>小猪按按钮：小猪吃 1 份（10-2-8，因为大猪先吃且能吃），大猪吃 9 份，白嫖。</li>
+<li>俩猪都不按：一起饿死。</li>
+<li>俩猪一起按，再跑回去：大猪吃 5 份，小猪吃 3 份（均摊消耗）。</li>
+</ul>
+<p>请问，如果你是那头<strong>小猪</strong>，你会去按按钮吗？</p>
+<p>傻子才去！我去按，累个半死才吃 1 份；我躺着不动，能白嫖 4 份！最优策略就一个字：<strong>躺！</strong></p>
+<p>大猪怎么办？它也知道小猪会躺。但它体型大，耗不起啊。权衡利弊，它只能骂骂咧咧地去按按钮，好歹能吃上 6 份，总比饿死强。</p>
+<p><strong>看，在这个博弈里，多劳不多得，会躺才会赢。</strong></p>
+<p>现在，把 “大猪” 替换成你们部门里那些有责任心、有理想（或者说傻）的卷王、“奋斗逼”。把 “小猪” 替换成老王这种职场老油条。</p>
+<p>“按按钮” 就是啃硬骨头项目、背黑锅、搞创新试错。“猪食” 就是奖金、晋升机会、领导好评。</p>
+<p>卷王们吭哧吭哧把项目搞成了，功劳怎么分？老王们早就利用摸鱼时间，把 PPT 做得天花乱坠，汇报时 “巧妙” 地强调了自己的 “协调支持” 作用。最后论功行赏，卷王累吐了血拿个大头，但老王们也能分走不小一块，性价比极高。</p>
+<p>甚至，当卷王累跑了、猝死了、心寒了，那个一直 “陪跑” 的、人畜无害的老王，就成了领导眼里 “稳定性高”、“熟悉情况” 的不二人选。</p>
+<p>气不气？但这就是规则内的 “理性选择”。</p>
+<p>作为管理者（猪圈主人），想避免这种情况咋办？<strong>移动食槽，减少投喂，让按按钮的猪独享。</strong></p>
+<p>说人话就是：改变激励规则。<strong>别吃大锅饭，奖金、晋升与个人绝对产出强绑定</strong>。谁啃下的骨头，肉就归谁大半。让 “小猪” 躺无可躺，要么起来干活，要么饿死出局。</p>
+<p>所以，如果你是个 “大猪”，看穿这个局，你要么学会争抢属于自己的 “食槽”（明确个人贡献，会邀功），要么干脆换个不养 “小猪” 的猪圈（公司）。如果你是个 “小猪”…… 嗯，你这不看得挺明白嘛，继续你的快乐人生就好。</p>
+<hr>
+<h3 id="第三幕：从合作猎鹿到互相捅刀——猎鹿博弈与枪手博弈"><strong>第三幕：从合作猎鹿到互相捅刀 —— 猎鹿博弈与枪手博弈</strong></h3>
+<p>好了，现在你心如死灰，决定跟几个同事一起辞职创业，心想：“给资本家打工没出路，咱们自己当合伙人，总该公平了吧？”</p>
+<p>年轻人，你还是太年轻。</p>
+<p>创业初期，你们是 “猎鹿博弈”。大家能力相近，目标一致（搞钱），合作抓一头鹿（做成项目），比分头抓兔子（各自打工）收益大得多。这时其乐融融，夜夜烧烤啤酒，畅想上市未来。</p>
+<p><strong>问题永远出在鹿抓到之后 —— 怎么分？</strong></p>
+<p>有个理论叫做 “夏普里值”，意思是要按贡献度分配。但贡献度这玩意儿，在创业公司就是一笔糊涂账。写代码的说我创造了核心产品，跑市场的说我拉来了救命钱，搞运营的说我没日没夜把用户做起来。</p>
+<p>谁该多拿？这就是 “利益分配” 的终极难题。一旦觉得不公平，“合作博弈” 瞬间滑向 “非合作博弈”。</p>
+<p>这时候，如果团队里有个绝对核心的老大（中心化权力），或许能强行分配。如果没有，往往就会上演更刺激的 ——<strong> 枪手博弈</strong>。</p>
+<p>假设你们三个合伙人，能力值：A &gt; B &gt; C。</p>
+<p>现在因为分赃不均，矛盾公开化，必须走一个。最强者 A，是不是最安全？</p>
+<p>恰恰相反！<strong>最先死的，往往是那个最强的 A。</strong></p>
+<p>因为 B 和 C 会想：如果我和 A 单挑，我必死。但如果我和 C（或 B）联手先干掉最强的 A，我们对付剩下的那个，还有机会。所以，对 B 和 C 来说，最优策略是：<strong>联合起来，先干掉那个最有威胁的 A。</strong></p>
+<p>于是，A 莫名其妙发现自己被孤立了，黑材料满天飞，最后被投票出局，净身出户。B 和 C 瓜分了他的股份，然后两人之间再开始新一轮的 “斗鸡博弈”。</p>
+<p>这就是商业史上无数次上演的戏码。创始人被投资人联手踢出局，大股东被小股东联合逼宫……<strong> 决定结局的，从来不是纸面实力，而是策略组合。</strong></p>
+<p>所以，想创业？光有热血和技术不够。你得懂：</p>
+<ol>
+<li><strong>初期用 “猎鹿心态” 团结人</strong>，但<strong>白纸黑字用 “夏普里精神” 把股权、利益分配写得明明白白</strong>，哪怕伤感情也要写。感情会淡，利益永存。</li>
+<li><strong>时刻警惕 “枪手困境”</strong> 。当你成为最强的那一个时，要懂得分利、示弱、制造平衡，别让自己成为众矢之的。有时候，“老二哲学” 反而活得更滋润。</li>
+</ol>
+<hr>
+<h3 id="第四幕：当退无可退，如何让对方也赢不了？——协和博弈与斗鸡博弈"><strong>第四幕：当退无可退，如何让对方也赢不了？—— 协和博弈与斗鸡博弈</strong></h3>
+<p>最后，聊点更黑暗但实用的。</p>
+<p>你在生意场上，遇到一个咄咄逼人的对手，实力比你强，摆明了要吃掉你。你委曲求全，割地赔款，他得寸进尺。怎么办？</p>
+<p>博弈论里有两个词：“鳄鱼法则” 和 “焦土政策”。</p>
+<p><strong>“鳄鱼法则”</strong>  说的是，如果一只鳄鱼咬住你的脚，你用手去掰，它会连你的手一起咬住。你越挣扎，死得越快。唯一的活路，就是<strong>牺牲那只脚</strong>，壮士断腕。</p>
+<p>说人话：<strong>及时止损，放弃沉没成本。</strong>  发现项目是坑，别想着追加投资捞本，立刻抽身。发现合伙人烂透了，别顾及前期感情投入，赶紧切割。很多人的悲剧，不是看不到损失，而是舍不得已经扔进去的成本，结果被拖进无底深渊。</p>
+<p>但有时候，你无路可退，脚被咬住了，断脚也是个死。比如，核心业务被恶意抄袭并碾压，全家老小就指着这公司吃饭。</p>
+<p>这时候，可以考虑  <strong>“焦土政策”</strong> 。</p>
+<p>简单说：<strong>我赢不了，你也别想好过。我要把胜利的成本，给你抬高到无法承受的地步。</strong></p>
+<p>商业上经典的 “毒丸计划” 就是如此。当遭遇恶意收购时，公司启动 “毒丸”，比如赋予现有股东以极低价格购买新股的权利，瞬间大幅稀释收购方的股权，让收购变得无比昂贵，甚至无利可图。这就是在告诉门口的 “野蛮人”：“你就算吃下我，也只会得到一具中毒的尸体，大家都别玩。”</p>
+<p>这在 “斗鸡博弈” 里，叫做  <strong>“展示非理性决心”</strong> 。</p>
+<p>两辆车在一条独木桥上迎面相遇，谁退谁输。常规博弈，是比谁车更贵，谁胆子更大。但最高明的策略是：当着对手的面，<strong>把自己的方向盘拆了，扔下桥</strong>。</p>
+<p>然后笑眯眯地看着对方：“哥，现在我控制不了车了。你要么退，要么咱俩一起下去当蝴蝶。你选？”</p>
+<p>当你能让对方相信，你已经 “不理性” 了，退无可退，准备玩命了。那么，那个更理性、更珍惜羽毛的对手，往往会选择退让。</p>
+<p>这不是鼓励你违法乱纪，而是让你明白：<strong>在博弈中，有时候最强的武器，不是你的实力，而是你 “不怕掀桌子” 的决心。</strong>  当然，这招是七伤拳，伤敌一千，自损八百，不到绝境别用。</p>
+<hr>
+<h3 id="尾声：学博弈论，不是为了当镰刀"><strong>尾声：学博弈论，不是为了当镰刀</strong></h3>
+<p>唠唠叨叨说了这么多，从职场 PUA 到创业内斗，从商业竞争到生死抉择。</p>
+<p>你会发现，博弈论这玩意儿，冰冷而真实。它撕开了所有温情脉脉的面纱，告诉你世界的运行基于<strong>理性的自私</strong>。</p>
+<p>那学它干嘛？为了变得更奸诈，去割别人的韭菜吗？</p>
+<p>格局小了，兄弟们。</p>
+<p>作为一个油腻的过来人，我学这玩意儿的最大心得恰恰是：</p>
+<p><strong>第一，为了不被轻易地割。</strong>  当你看懂每一个局，识别出 “囚徒困境”“智猪博弈”，你就能避免很多无谓的内耗和牺牲，保护自己那点可怜的剩余价值。</p>
+<p><strong>第二，为了在不得不博弈时，能做出最优选择。</strong>  是合作还是背叛？是进攻还是防守？是止损还是拼命？心里有张谱，下棋才不慌。</p>
+<p><strong>第三，也是最关键的 —— 理解 “纳什均衡” 对亚当・斯密那句 “看不见的手” 的终极打脸。</strong></p>
+<p>个人理性的最优选择，<strong>常常导致集体最差的结果</strong>。内卷如此，价格战如此，环境破坏如此。</p>
+<p>所以，真正高级的玩法，不是在其中当一个更精致的利己主义者，而是<strong>想办法去改变博弈的规则本身</strong>，去创造一个能让 “合作” 成为稳定纳什均衡的新环境。</p>
+<p>这很难，需要智慧，更需要权力。</p>
+<p>但对于我们大多数普通人而言，看懂博弈，至少能让我们在洪流中，保持一丝清醒的疼痛。知道自己是为什么在挣扎，也知道，或许，我们还有其他选择。</p>
+<p>就像那个著名的博弈论故事结尾：两个仇人被关进一间屋子，屋子里有一个按钮。广播告诉他们，如果一小时内没人按按钮，两人都会获得自由和一笔钱；但如果有人按了，按的人能先走并拿走所有钱，另一个则会被处死。</p>
+<p>时间一分一秒过去……</p>
+<p>最终，谁也没有按下按钮。</p>
+<p>不是因为高尚，而是因为他们都<strong>听懂了规则</strong>，并且<strong>相信对方也听懂了规则</strong>。</p>
+<p>愿我们，都能在生活的博弈中，找到那个不用互相伤害，也能好好活下去的 “均衡点”。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/01/11/%E4%BA%BA%E7%94%9F%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/" title="人生游戏底层代码">https://cn-vhql.github.io/2026/01/11/人生游戏底层代码/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%80%9D%E8%80%83/" rel="tag"># 思考</a>
+              <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag"># 方法论</a>
+              <a href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag"># 生活</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/11/2026%E5%B9%B4%EF%BC%8C%E6%88%91%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E5%86%8D%E6%AD%BB%E7%A3%95%E5%A4%A7%E6%A8%A1%E5%9E%8B/" rel="prev" title="2026 年，我不建议产品经理再死磕大模型">
+                  <i class="fa fa-angle-left"></i> 2026 年，我不建议产品经理再死磕大模型
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/12/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%EF%BC%9F%E5%91%B8%EF%BC%8C%E8%BF%99%E6%89%8D%E6%98%AF%E9%97%A8%E9%82%AA%E6%95%99/" rel="next" title="时间管理？呸，这才是门邪教">
+                  时间管理？呸，这才是门邪教 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="来，甭管你是被套牢的散户，还是被老板PUA到怀疑人生的财务小白，今天咱不聊虚的。就聊一张纸，一张能让你看清一家公司是“真大佬”还是“画皮鬼”的纸——资产负债表。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深挖资产负债表">
+<meta property="og:url" content="https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="来，甭管你是被套牢的散户，还是被老板PUA到怀疑人生的财务小白，今天咱不聊虚的。就聊一张纸，一张能让你看清一家公司是“真大佬”还是“画皮鬼”的纸——资产负债表。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-09T12:29:10.000Z">
+<meta property="article:modified_time" content="2026-01-09T12:32:20.522Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="投资">
+<meta property="article:tag" content="资产负债表">
+<meta property="article:tag" content="金融">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/","path":"2023/02/09/深挖资产负债表/","title":"深挖资产负债表"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>深挖资产负债表 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">深挖资产负债表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%85%88%E7%9C%8B%E5%B1%81%E8%82%A1%E5%B9%B2%E4%B8%8D%E5%B9%B2%E5%87%80%EF%BC%9A%E8%B4%9F%E5%80%BA%E6%98%AF%E5%8E%9F%E7%BD%AA%EF%BC%8C%E5%80%9F%E9%92%B1%E5%A7%BF%E5%8A%BF%E8%A7%81%E4%BA%BA%E5%93%81"><span class="nav-number">1.1.</span> <span class="nav-text">一、先看屁股干不干净：负债是原罪，借钱姿势见人品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%86%8D%E7%9C%8B%E5%AE%B6%E5%BD%93%E5%AE%9E%E4%B8%8D%E5%AE%9E%E5%9C%A8%EF%BC%9A%E8%B5%84%E4%BA%A7%E9%87%8C%E7%9A%84%E2%80%9C%E6%B3%A8%E6%B0%B4%E8%82%89%E2%80%9D%E5%92%8C%E2%80%9C%E7%83%82%E5%BF%83%E8%8B%B9%E6%9E%9C%E2%80%9D"><span class="nav-number">1.2.</span> <span class="nav-text">二、再看家当实不实在：资产里的 “注水肉” 和 “烂心苹果”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E6%88%98%EF%BC%9A%E6%80%8E%E4%B9%88%E7%94%A8%E8%BF%99%E5%BC%A0%E8%A1%A8%E9%81%BF%E5%BC%80%E5%A4%A7%E5%9D%91%E5%92%8C%E6%89%BE%E5%88%B0%E9%87%91%E5%AD%90%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">三、实战：怎么用这张表避开大坑和找到金子？</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="深挖资产负债表 | 知行录">
+      <meta itemprop="description" content="来，甭管你是被套牢的散户，还是被老板PUA到怀疑人生的财务小白，今天咱不聊虚的。就聊一张纸，一张能让你看清一家公司是“真大佬”还是“画皮鬼”的纸——资产负债表。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深挖资产负债表
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-09 20:29:10" itemprop="dateCreated datePublished" datetime="2023-02-09T20:29:10+08:00">2023-02-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-09 20:32:20" itemprop="dateModified" datetime="2026-01-09T20:32:20+08:00">2026-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%87%91%E8%9E%8D/" itemprop="url" rel="index"><span itemprop="name">金融</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">来，甭管你是被套牢的散户，还是被老板PUA到怀疑人生的财务小白，今天咱不聊虚的。就聊一张纸，一张能让你看清一家公司是“真大佬”还是“画皮鬼”的纸——资产负债表。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1>深挖资产负债表</h1>
+<p>别一听这名字就头大，什么资产、负债、所有者权益，跟天书似的。</p>
+<p><strong>说白了，这就是公司的 “相亲体检报告”。</strong> 资产是它穿在外面的名牌西装和劳力士，负债是它藏在裤兜里的高利贷借条，所有者权益才是它兜里真正属于自己的钢镚儿。</p>
+<p>你看不懂？没关系，镰刀们就喜欢你看不懂。</p>
+<p>今天，咱就用菜市场砍价的智慧，把这层遮羞布给你撕得明明白白。目标就一个：<strong>让你以后再看公司财报，就像看村口二狗子的微信余额一样清晰。</strong></p>
+<hr>
+<h3 id="一、先看屁股干不干净：负债是原罪，借钱姿势见人品"><strong>一、先看屁股干不干净：负债是原罪，借钱姿势见人品</strong></h3>
+<p>看财报，别一上来就盯着 “总资产几百亿” 流口水。那玩意儿跟微商喜提玛莎拉蒂一个性质，水分能淹死你。</p>
+<p><strong>第一步，也是最关键的一步：直接拉到最后，看 “负债和所有者权益”。</strong></p>
+<p>这就好比相亲，你先别管他开什么车，先让他把征信报告和银行流水打出来。公司也一样，你得先知道，它那光鲜亮丽的家当，<strong>有多少是借的，有多少是自己的。</strong></p>
+<ul>
+<li>​ <strong>“所有者权益” 高</strong>：说明这哥们家底厚，是实打实的 “富二代” 或自己赚的，抗风险能力强。</li>
+<li>​ <strong>“负债” 特别是 “有息负债” 巨高</strong>：呵呵，这就是个 “假土豪”，外面风光，里面慌得一批，天天被债主堵门。</li>
+</ul>
+<p>怎么看借的钱危不危险？看三点，跟我念：<strong>为何借，向谁借，利息高不高。</strong></p>
+<ol>
+<li>
+<p>​<strong>为何借</strong>：如果借钱是为了扩产能、搞研发，算正经事。但如果是因为主业赚不到钱，窟窿太大，拆东墙补西墙，那就完犊子了。这叫 “输血续命”，迟早药丸。</p>
+</li>
+<li>
+<p>​<strong>向谁借 &amp; 利息多高</strong>：这是核心鉴定器。</p>
+<ul>
+<li>​<strong>警惕点 1</strong>​：​<strong>利息远高于市场平均水平</strong>​。好比你能从银行借到 4% 的房贷，偏要去借 15% 的网贷。为啥？要么是银行觉得你风险太高不借，要么就是你急着用钱，饥不择食。<strong>任何一家利息畸高的公司，都是在刀尖上跳舞。</strong></li>
+<li>​<strong>警惕点 2</strong>​：​<strong>账上明明趴着大把现金，还去借高息贷款</strong>​。这就魔幻了。你家里藏着金条，却天天去借砍头息？逻辑上根本说不通。<strong>99% 的可能性是：账上的钱是假的，要么被冻结了，要么根本不存在（虚构存款），或者被大股东挪用了没在账上。</strong> 经典暴雷姿势 ——“存贷双高”。</li>
+</ul>
+</li>
+</ol>
+<p>​<strong>干货公式来了</strong>​：别光看 “资产负债率” 那个虚的。用 <strong>​<code>有息负债 / 总资产</code>​</strong> 算一下。</p>
+<p><strong>超过 60%</strong> ？兄弟，这公司比较 “激（作）进（死）”，相当于一个人收入一半以上都得还网贷，一个风吹草动就可能资金链断裂。遇到这种，建议你绕着走，它画的饼再香，也禁不住债务的雷炸。</p>
+<hr>
+<h3 id="二、再看家当实不实在：资产里的“注水肉”和“烂心苹果”"><strong>二、再看家当实不实在：资产里的 “注水肉” 和 “烂心苹果”</strong></h3>
+<p>搞清楚钱怎么来的，再来看钱花哪儿去了。资产表，就是公司的 “购物清单”。</p>
+<p><strong>核心就四问：钱花哪了？有啥变化？同行啥水平？结构组成咋样？</strong></p>
+<p>这里边坑多如牛毛，我给你画几个重点避雷区：</p>
+<p><strong>1. 生产类资产：是印钞机还是吞金兽？</strong></p>
+<p>就是厂房、机器设备这些。这里有个关键指标： ​<strong>​<code>生产资产 / 总资产</code>​</strong>。</p>
+<p>比例太高，就是 “重资产公司”。这种公司像一头巨象，转身慢，吃饭多（折旧高）。经济好时能扛能打，一旦行业下行，机器不能当饭吃，每天睁眼就是巨额折旧，能活活把自己压死。<strong>投资上，优先选 “轻资产公司”，船小好调头，赚钱不费劲。</strong></p>
+<p>怎么判断轻还是重？再算一下： ​<strong>​<code>当年税前总利润 / 生产资产</code>​</strong>。</p>
+<p>算出来的回报率，如果能秒杀社会平均理财收益（比如 5%），那这就是台高效的印钞机，属于优质轻公司。如果连余额宝都跑不赢，那这堆铁疙瘩就是废铜烂铁，在吞噬你的投资。</p>
+<p><strong>生产资产里的 “骚操作” 集中营：</strong></p>
+<ul>
+<li>
+<p>​<strong>固定资产折旧</strong>：好公司会 “加速折旧”，多计费用，低调做人（少交税）。坏公司反过来，尽量少折旧，让账面利润好看。</p>
+</li>
+<li>
+<p>​<strong>在建工程</strong>​：这是个 “魔法科目”，<strong>因为不用计提折旧！</strong> 如果一家公司 “在建工程” 金额巨大，且常年不转为 “固定资产”，你就要警惕了。​<strong>很可能是在用 “在建工程” 这个池子隐藏成本或转移资金</strong>，反正不折旧，利润就能 “做” 得很漂亮。</p>
+</li>
+<li>
+<p>​<strong>研发支出</strong>​：利润高的好公司，喜欢把研发投入 “费用化”，一次性扣掉，利润实在，税交得少。只有那些经营困难或初创公司，才拼命把研发支出 “资本化”，变成资产挂在账上，让报表不至于太难看。<strong>看到大量研发资本化的，多留个心眼。</strong></p>
+</li>
+<li>
+<p>​<strong>生物性资产 &amp; 商誉</strong>​：<strong>造假高发区！五星级警戒！</strong></p>
+<ul>
+<li>农林牧渔的猪啊、树啊、扇贝啊（对，就是说你呢獐子岛），审计难度逆天，说跑就跑说死就死。​<strong>建议普通散户直接把这个行业拉黑</strong>，你的智商玩不过他们的套路。</li>
+<li>商誉，就是收购时多花的冤枉钱。<strong>关键点：商誉不用摊销，但可以一次性减值计提。</strong> 这就给管理层留下了巨大的 “财报美容” 空间：今年业绩差，索性计提个大额商誉减值，把锅全甩给 “去年收购的那家公司不行了”，一次性亏个够，明年轻轻松松就能实现 “同比大幅增长”。<strong>看到商誉巨大的公司，请自动在心理上将其净资产打对折再看。</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 经营类资产：生意的照妖镜</strong></p>
+<p>这部分最能看出公司生意做得好不好，地位牛不牛。</p>
+<ul>
+<li>
+<p>​<strong>应收票据 &amp; 应收账款</strong>​：这是 ​<strong>客户欠你的钱</strong>。</p>
+<ul>
+<li>如果应收票据里主要是 “银行承兑汇票”（银票），说明客户愿意找银行担保来买你货，​<strong>你公司牛，是甲方爸爸</strong>。</li>
+<li>如果全是 “商业承兑汇票”（商票）或者应收账款一大堆，说明你为了卖货，不得不允许客户赊账打白条。​<strong>你公司弱势，是求着乙方的孙子</strong>。</li>
+<li>​<strong>核心预警</strong>​：如果应收账款增速<strong>远超过</strong>营业收入增速，或者应收账款周转率远低于同行。别信什么 “销售策略放宽” 的鬼话，<strong>大概率是两种情况：要么产品卖不动了，只能靠赊销；更可怕的，是在提前确认收入甚至虚构收入！</strong> 收入是假的，利润就是空中楼阁。</li>
+</ul>
+</li>
+<li>
+<p>​<strong>预收款项</strong>​：这是 ​<strong>客户提前打给你的钱</strong>​。这个科目越大，我越喜欢。这说明啥？<strong>说明你产品抢手，客户哭着喊着要先打钱排队！</strong> 比如以前的茅台，楼盘的开盘定金。这体现了公司在产业链上的绝对统治地位。</p>
+</li>
+<li>
+<p>​<strong>预付款项</strong>​：和预收款相反，这是 ​<strong>你提前打给供应商的钱</strong>​。这个科目突然暴增，尤其是付一些莫名其妙的 “工程款”、“专利费”，<strong>要高度警惕！</strong> 这很可能是造假资金流出的经典通道：钱以预付款名义转给关联方，关联方再伪装成客户，把这钱拿回来买公司产品，一轮循环，​<strong>收入、利润就都 “做” 出来了</strong>。</p>
+</li>
+<li>
+<p>​<strong>货币资金</strong>：最后说说最 “安全” 的现金。结合前面负债部分看：</p>
+<ul>
+<li>​<strong>存贷双高</strong>：再说一遍，暴雷标配。</li>
+<li>​<strong>现金很多但没啥利息收入</strong>：钱可能只是过路财神，报表日前转进来摆拍，审完就划走。</li>
+</ul>
+</li>
+<li>
+<p><strong>“其他应收款” 等 “其他 XX” 科目</strong>：<strong>记住一个铁律：凡是名字带 “其他” 且金额巨大的，基本都是垃圾筐，什么见不得人的东西都往里扔。</strong> 优秀公司的 “其他” 科目，金额小到可以忽略不计。</p>
+</li>
+</ul>
+<hr>
+<h3 id="三、实战：怎么用这张表避开大坑和找到金子？"><strong>三、实战：怎么用这张表避开大坑和找到金子？</strong></h3>
+<p>道理懂了，怎么用？</p>
+<p><strong>第一步，排雷（规避激进型、问题型企业）：</strong></p>
+<ol>
+<li>​<strong>算有息负债率</strong>​：&gt;60%？一票否决，太激进。</li>
+<li>​<strong>查 “存贷双高”</strong> ：货币资金和有息负债都巨高？直接拉黑。</li>
+<li>​<strong>看应收和营收增速</strong>：应收增速远快于营收？危险信号。</li>
+<li>​<strong>盯 “其他应收” 和 “预付款”</strong> ：数额诡异增大？大概率有鬼。</li>
+<li>​<strong>远离 “生物资产” 和 “高商誉”</strong> ：你我普通人不配玩这种高端局。</li>
+</ol>
+<p><strong>第二步，选优（通过资产表选股）：</strong></p>
+<ol>
+<li>​<strong>看行业地位</strong>​：<strong>​<code>预收款 / 营业收入</code>​</strong>​ 比例高，且应收款里银票多，<strong>说明公司是强势方，有定价权。</strong></li>
+<li>​<strong>看资产结构</strong>​：<strong>​<code>生产资产/总资产</code>​</strong>​ 比例低，且 <strong>​<code>税前利润/生产资产</code>​</strong>​ 回报率高，说明是 ​<strong>轻资产、高效率的赚钱机器</strong>。</li>
+<li>​<strong>看财务安全</strong>​：<strong>​<code>货币资金 / 有息负债</code>​</strong> 最好能大于 1，短期没有偿债危机。</li>
+<li>​<strong>看主业专注度</strong>​：<strong>​<code>非主业资产 / 总资产</code>​</strong> 比例小，说明管理层老老实实在自己的一亩三分地上耕耘，不是整天想着炒房炒股搞投资的二流子。</li>
+</ol>
+<p><strong>第三步，判断行业冷暖（同行对比）：</strong></p>
+<p>把行业内几家公司的这些关键比率（应收周转率、生产资产占比、负债结构等）放在一起看。</p>
+<p>如果全行业都出现应收账款恶化、存货积压，说明行业不景气，大家都在泥潭里打滚。如果只有某一家公司指标奇好，远超同行，别高兴太早，​<strong>很可能不是它太优秀，而是它的财报 “太优秀”</strong> —— 造假嫌疑极大。</p>
+<p><strong>最后说句实在的：</strong></p>
+<p>财报是公司管理层让你看到的样子。真正的老炮，不是相信财报写了什么，而是通过交叉验证和常识，去怀疑它 ​<strong>没写什么、隐瞒了什么、美化什么</strong>。</p>
+<p>看懂资产负债表，不能保证你暴富，但至少能帮你 ​<strong>避开 99% 的明显大坑</strong>​。在镰刀飞舞的资本市场，​<strong>不亏钱，你就已经跑赢了大多数人</strong>。</p>
+<p>记住，<strong>好公司通常简单透明，坏公司才需要层层粉饰。</strong> 当你发现一家公司的财报复杂到需要 “专家” 反复解读才能 “理解” 其伟大时，最好的动作就是：关掉页面，删除自选。</p>
+<p>这年头，保护好自己的钱包，就是最大的智慧。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2023/02/09/%E6%B7%B1%E6%8C%96%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/" title="深挖资产负债表">https://cn-vhql.github.io/2023/02/09/深挖资产负债表/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%95%E8%B5%84/" rel="tag"># 投资</a>
+              <a href="/tags/%E9%87%91%E8%9E%8D/" rel="tag"># 金融</a>
+              <a href="/tags/%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8/" rel="tag"># 资产负债表</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/09/%E6%8B%9C%E8%AF%BB%E3%80%8A%E4%B8%80%E4%B8%AA%E5%86%9C%E6%B0%91%E7%9A%84%E4%BA%BF%E4%B8%87%E4%BC%A0%E5%A5%87%E3%80%8B/" rel="prev" title="拜读《一个农民的亿万传奇》">
+                  <i class="fa fa-angle-left"></i> 拜读《一个农民的亿万传奇》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/09/%E6%B7%B1%E6%8C%96%E5%88%A9%E6%B6%A6%E8%A1%A8/" rel="next" title="深挖利润表">
+                  深挖利润表 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
