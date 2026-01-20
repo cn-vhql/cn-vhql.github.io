@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="你看这标题，“近端策略优化”，又是策略又是优化，一股子实验室老学究的酸腐味儿扑面而来，对吧？ 一般人看了直接劝退，感觉这玩意儿跟咱没半毛钱关系。 但我要告诉你，这玩意儿，恰恰是教你“如何科学地画饼”、“如何高效地PUA”，以及“如何让一个AI学会既要又要还要”的终极心法。 而且，它比你家老板画的饼实在，比你看的成功学有效，因为人家真能出活儿。 今天，咱不扯公式，不说人听不懂的黑话。我就用普通小白的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="白话：近端策略优化 PPO">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="你看这标题，“近端策略优化”，又是策略又是优化，一股子实验室老学究的酸腐味儿扑面而来，对吧？ 一般人看了直接劝退，感觉这玩意儿跟咱没半毛钱关系。 但我要告诉你，这玩意儿，恰恰是教你“如何科学地画饼”、“如何高效地PUA”，以及“如何让一个AI学会既要又要还要”的终极心法。 而且，它比你家老板画的饼实在，比你看的成功学有效，因为人家真能出活儿。 今天，咱不扯公式，不说人听不懂的黑话。我就用普通小白的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-20T14:16:00.000Z">
+<meta property="article:modified_time" content="2026-01-20T14:16:53.032Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="工作">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/","path":"2026/01/20/白话：近端策略优化PPO/","title":"白话：近端策略优化 PPO"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>白话：近端策略优化 PPO | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%81%E7%A5%96%E5%AE%97%E7%9A%84%E6%99%BA%E6%85%A7%E2%80%94%E2%80%94%E7%9E%8E%E7%8C%AB%E7%A2%B0%E4%B8%8A%E6%AD%BB%E8%80%97%E5%AD%90%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">老祖宗的智慧 —— 瞎猫碰上死耗子法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%9F%E6%B9%96%E8%80%81%E4%B8%AD%E5%8C%BB%E7%9A%84%E2%80%9C%E5%BE%AE%E8%B0%83%E2%80%9D%E8%89%BA%E6%9C%AF%E2%80%94%E2%80%94%E8%87%AA%E7%84%B6%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">江湖老中医的 “微调” 艺术 —— 自然策略梯度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%9F%E6%B9%96%E6%88%91%E5%A4%A7%E5%93%A5%E2%80%94%E2%80%94%E6%97%A2%E5%BD%93%E8%A3%81%E5%88%A4%E5%8F%88%E5%BD%93%E8%BF%90%E5%8A%A8%E5%91%98%E7%9A%84TRPO"><span class="nav-number">3.</span> <span class="nav-text">江湖我大哥 —— 既当裁判又当运动员的 TRPO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%A0%E9%BE%99%E5%B0%91%E5%B9%B4%E7%BB%88%E6%88%90%E5%A4%96%E5%8D%96%E4%B9%8B%E7%8E%8B%E2%80%94%E2%80%94PPO%E7%9A%84%E7%BB%88%E6%9E%81%E6%99%BA%E6%85%A7"><span class="nav-number">4.</span> <span class="nav-text">屠龙少年终成外卖之王 ——PPO 的终极智慧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E5%86%8D%E8%AF%B4%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text">最后再说点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="白话：近端策略优化 PPO | 知行录">
+      <meta itemprop="description" content="你看这标题，“近端策略优化”，又是策略又是优化，一股子实验室老学究的酸腐味儿扑面而来，对吧？
+一般人看了直接劝退，感觉这玩意儿跟咱没半毛钱关系。
+但我要告诉你，这玩意儿，恰恰是教你“如何科学地画饼”、“如何高效地PUA”，以及“如何让一个AI学会既要又要还要”的终极心法。
+而且，它比你家老板画的饼实在，比你看的成功学有效，因为人家真能出活儿。
+今天，咱不扯公式，不说人听不懂的黑话。我就用普通小白的视角，给你扒开这层学术外衣，看看这帮搞AI的聪明脑袋瓜，是怎么把一个“教AI做事”的问题，折腾出花来的。你会发现，里面的套路，跟你老板忽悠你加班、健身房忽悠你办卡，底层逻辑惊人的相似。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          白话：近端策略优化 PPO
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-20 22:16:00 / 修改时间：22:16:53" itemprop="dateCreated datePublished" datetime="2026-01-20T22:16:00+08:00">2026-01-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">你看这标题，“近端策略优化”，又是策略又是优化，一股子实验室老学究的酸腐味儿扑面而来，对吧？
+一般人看了直接劝退，感觉这玩意儿跟咱没半毛钱关系。
+但我要告诉你，这玩意儿，恰恰是教你“如何科学地画饼”、“如何高效地PUA”，以及“如何让一个AI学会既要又要还要”的终极心法。
+而且，它比你家老板画的饼实在，比你看的成功学有效，因为人家真能出活儿。
+今天，咱不扯公式，不说人听不懂的黑话。我就用普通小白的视角，给你扒开这层学术外衣，看看这帮搞AI的聪明脑袋瓜，是怎么把一个“教AI做事”的问题，折腾出花来的。你会发现，里面的套路，跟你老板忽悠你加班、健身房忽悠你办卡，底层逻辑惊人的相似。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="老祖宗的智慧——瞎猫碰上死耗子法">老祖宗的智慧 —— 瞎猫碰上死耗子法</h3>
+<p>一切的开始，都得从一个朴素的想法说起：<strong>怎么让一个 AI 学会做事？</strong></p>
+<p>最早那帮搞强化学习的老哥，想法很单纯，甚至有点傻白甜。他们搞了个叫 “策略梯度”（PG）的玩意儿，思路堪称直男典范：</p>
+<ol>
+<li><strong>让 AI 瞎蒙</strong>：比如教 AI 打游戏，它一开始就是个智障，屏幕上出现个怪物，它可能按攻击，也可能按跳跃，纯随机。</li>
+<li><strong>蒙对了就给糖</strong>：这一通操作下来，如果居然把怪打死了，得了高分，那就给 AI 记一功：“嗯，刚才这套王八拳，不错！”</li>
+<li><strong>按功行赏，调整概率</strong>：重点来了。AI 不是有个 “出招概率表” 吗？比如看到怪物，出 “攻击” 的概率是 30%，出 “跳跃” 是 70%。现在因为 “攻击” 蒙对了得了高分，好，咱就把 “攻击” 这个动作的概率调高一点，比如调到 35%。下次它就更可能出攻击。</li>
+</ol>
+<p><strong>说白了，这就是个 “大力出奇迹” 的土法子。</strong>  就像你教你家哈士奇握手，它偶然抬了下爪子，你立刻喂根香肠，反复多次，它就会把 “抬爪” 和 “香肠” 联系起来。</p>
+<p>这个法子，就叫 <strong>REINFORCE 算法</strong>，是策略梯度家族的初代目。</p>
+<p><strong>听着是不是挺美？但坑马上就来了。</strong></p>
+<p>这算法有个致命缺陷：<strong>步子大了容易扯着蛋。</strong></p>
+<p>AI 学习，靠的是 “梯度”，也就是告诉你 “往哪个方向调整参数，能更快吃到糖”。但这个梯度，它是个 “近视眼”。它只告诉你：“兄弟，往东走有糖！” 却没告诉你，往东走一步是糖，走十步可能就是悬崖。</p>
+<p>结果就是，AI 经常一激动，学习率（就是一步迈多大）调太高，猛地一窜。好，这下 “攻击” 的概率不是从 30% 调到 35% 了，是直接干到 95%！彻底魔怔了，以后不管遇到啥，就知道无脑攻击。遇到个必须跳过去的坑，它也攻击，直接一头撞死。</p>
+<p><strong>这在学术上叫 “过冲”（Overshooting），说人话就是：一剂猛药下去，病人直接嘎了。</strong></p>
+<p>更惨的是，环境数据是 AI 自己试出来的。它一旦变成 “无脑攻击怪”，那之后试出来的数据，全是它撞墙的记录。它用这些垃圾数据再去学习，只会更坚信 “无脑攻击” 是对的。彻底陷入恶性循环，没救了。</p>
+<p>你看，这像不像职场？你偶然一次熬夜加班把活儿干完了，老板大加赞赏。结果你误以为 “加班 = 受赏识”，开始天天表演性加班，最后身体垮了，活儿反而因为效率低下干得更差，老板看你也不顺眼了。这就是 “策略过冲”，一招鲜，以为能吃遍天，最后把自己玩死。</p>
+<p>所以，老祖宗的智慧虽然直接，但太糙，容易把自己练成偏科傻子。</p>
+<hr>
+<h3 id="江湖老中医的“微调”艺术——自然策略梯度">江湖老中医的 “微调” 艺术 —— 自然策略梯度</h3>
+<p>第一代算法这么莽，肯定不行。于是来了帮 “老中医”，说要 “温和调理，忌猛忌躁”。</p>
+<p>他们提出了一个灵魂问题：<strong>我们限制 AI 一步迈太大，限制的是什么？是它参数变化的幅度吗？</strong></p>
+<p>不，<strong>大错特错</strong>。</p>
+<p>举个例子：你和你女朋友吵架，你声音提高了一度，她可能觉得 “你居然敢吼我？！”；但你在菜市场，声音提高二十分贝，大妈可能都觉得你没吃饭。</p>
+<p><strong>同样的变化幅度，在不同的 “分布” 里，效果天差地别。</strong></p>
+<p>AI 的策略，本质上也是一个概率分布。你光限制参数（音量）变了多少没用，你得看它策略（概率分布）本身改变了多少。这才是关键。</p>
+<p>那怎么衡量两个概率分布的差异呢？江湖黑话，叫 <strong>KL 散度</strong>。你可以把它理解为  <strong>“两个概率分布的惊吓度差异”</strong> 。KL 散度小，说明新策略和旧策略差不多，AI 只是微微调整；KL 散度大，说明新策略已经 “面目全非”，成了另一个 AI。</p>
+<p>“自然策略梯度”（NG）这帮老中医的思路就来了：<strong>我们更新时，别管参数变了多少，我们就死死按住 KL 散度，让它每次更新都不能超过一个很小的值（比如 0.01）。</strong>  这就相当于给 AI 的每次学习，套上了一个 “紧箍咒”：你可以调整，但只能微调，不许变身。</p>
+<p>为了实现这个，他们引入了一个叫 <strong>费舍尔信息矩阵（F）</strong>  的玩意儿。这玩意儿你不用懂是啥，就把它理解成  <strong>“策略对这个参数的敏感度测量仪”</strong> 。在平缓的地方（菜市场），允许你多走几步；在敏感的地方（女朋友面前），你动一动手指头它都给你算出来。</p>
+<p>最终，自然策略梯度给出的更新方向，是这个测量仪校正过的、最稳妥的方向。</p>
+<p><strong>听着很美好对吧？科学，严谨，充满数学之美。</strong></p>
+<p>但现实是骨感的。这算法有三大死穴：</p>
+<ol>
+<li><strong>算不动</strong>：那个 “敏感度测量仪” F，是个巨大的矩阵，求它的逆矩阵（就像解一个超级复杂的方程），计算量是参数的立方级。AI 参数动辄百万千万，这算一下，电费都够你吃一壶。</li>
+<li><strong>管太死</strong>：KL 散度限制得太严，AI 像个裹了小脚的老太太，一步三晃，学习速度慢得令人发指。</li>
+<li><strong>不包售后</strong>：所有计算都是近似估算，理论很美，但实际更新完，策略到底有没有进步？不知道。可能忙活半天，更新了个寂寞。</li>
+</ol>
+<p>这就好比一个老中医，给你把脉能说上俩小时阴阳五行，开的方子贼复杂，药引子要清晨荷叶上的露珠。最后你病能不能好？他不管，他只管过程符合医书。</p>
+<p>理论派，往往死于实践。</p>
+<hr>
+<h3 id="江湖我大哥——既当裁判又当运动员的TRPO">江湖我大哥 —— 既当裁判又当运动员的 TRPO</h3>
+<p>自然梯度这老中医不行，得来点更实用的江湖手段。于是，<strong>信赖域策略优化（TRPO）</strong>  闪亮登场。这位是真正的大哥，思路就一个：<strong>我不仅要你小步走，我还要确保你每一步都走对了！</strong></p>
+<p>TRPO 干了几件非常 “社会” 的事：</p>
+<p><strong>1. 搞 “垄断经营”（替代优势）：</strong><br>
+TRPO 说，别老用新策略去环境里试了，费劲。咱们就用<strong>旧策略</strong>收集来的数据（动作和奖励），来估算新策略好不好。怎么估算呢？用了一个叫 “重要性采样” 的戏法。<strong>简单讲，就是 “旧瓶装新酒”</strong> 。我用你旧策略打出来的数据记录，假装是新策略打的，然后算分。当然，这中间有个换算公式（就是概率比）。</p>
+<p>这个估算出来的好处，就叫 “替代优势”。TRPO 的核心目标，就是最大化这个替代优势。<strong>翻译成人话：用老数据，吹新牛逼。</strong></p>
+<p><strong>2. 组建 “执法队”（共轭梯度法）：</strong><br>
+自然梯度不是卡在算那个 “敏感度测量仪” F 的逆矩阵上了吗？TRPO 大哥狡猾一笑：谁让你真的去算那个破矩阵了？我们最终不就是要一个更新方向吗？我派一队 “小弟”（共轭梯度法），用迭代的方式去逼近这个方向，不用真的把矩阵求出来。<strong>这就好比我不需要知道整个城市的交通图，我只要有个滴滴司机能把我送到目的地就行。</strong></p>
+<p><strong>3. 设立 “安全检察”（线搜索 + 改进检查）：</strong><br>
+这是 TRPO 最精髓的 “社会经验”。它不信任理论算出来的那个 “最优步长”。它说，来，咱们实际检验：</p>
+<ul>
+<li><strong>线搜索</strong>：先按理论算出来的最大步长，试探性地更新一下。然后立马检查 KL 散度超没超限。超了？好，把步长砍半，再试。还超？再砍半。直到找到一个不超限的最大步长。<strong>这就像你借钱，先开口借 100 万，朋友脸色不对，马上改口 50 万，最后可能只借到 5 万。目的是借到钱，而不是坚持借 100 万。</strong></li>
+<li><strong>改进检查</strong>：更新完了，KL 散度也没超。但万一这个更新是负优化呢？TRPO 会真的去算一下 “替代优势”，确保这次更新<strong>确实</strong>带来了好处。如果没有，这步更新就无效，回退。<strong>这就相当于 “七天无理由退换”，保证消费者（策略）不吃亏。</strong></li>
+</ul>
+<p>TRPO 这一套组合拳下来，效果拔群，一时间成了强化学习界的扛把子。因为它真的在<strong>小心翼翼地进步</strong>。</p>
+<p>但大哥也有大哥的烦恼：<strong>太！重！了！</strong><br>
+二阶优化（涉及那个 F 矩阵）、共轭梯度、线搜索…… 一套流程走下来，计算复杂，速度慢。就像一个公司，风控、法务、审计流程极其严格，安全是安全了，但做个决策慢得要死，错过无数市场机会。</p>
+<p>我们需要一个更灵活、更快、效果也不差的 “新大哥”。</p>
+<hr>
+<h3 id="屠龙少年终成外卖之王——PPO的终极智慧">屠龙少年终成外卖之王 ——PPO 的终极智慧</h3>
+<p>然后，救世主（或者说是 “摸鱼之王”）出现了 ——<strong> 近端策略优化（PPO）</strong> 。</p>
+<p>PPO 一看 TRPO 那套繁文缛节，直摇头：大哥，都什么年代了，还玩得这么重？咱们目标不就两个吗：1. 让策略进步；2. 别进步得太离谱。</p>
+<p>为此，PPO 祭出了两个堪称 “流氓” 但好用到逆天的简化方案：</p>
+<p><strong>方案 A：PPO-Penalty（动态违约金）</strong><br>
+TRPO 不是把 KL 散度当硬约束吗？PPO 说，别那么死板，咱把它变成<strong>罚款项</strong>。目标函数 = 替代优势 - β * KL 散度。<br>
+如果这次更新后，KL 散度太大了，下次我就把罚款系数 β 调高，让你肉疼；如果 KL 散度太小了，说明你太保守，下次我把 β 调低，鼓励你步子大点。<br>
+<strong>这就好比公司考勤，迟到不直接开除，而是扣钱。迟到多了就加重扣款，几乎不迟到就降低扣款标准。动态管理，灵活得很。</strong></p>
+<p><strong>方案 B：PPO-Clip（直接物理限幅）—— 这才是真正的神！</strong><br>
+这是目前最流行、最好用的版本，也是 ChatGPT 背后用的那个。它的想法简单粗暴到令人发指：</p>
+<p><strong>我不跟你算什么 KL 散度了，我直接给你划两条红线！</strong></p>
+<p>它定义了一个 “剪辑” 函数。在计算替代优势时，它看一个关键比值：新策略概率 / 旧策略概率（就是前面那个重要性采样权重）。</p>
+<ul>
+<li>我给这个比值设定一个范围，比如 [0.8， 1.2]。</li>
+<li>如果这个比值在 0.8 到 1.2 之间，好，就用它正常算。</li>
+<li>如果这个比值小于 0.8（说明新策略大幅降低了某个好动作的概率），或者大于 1.2（说明新策略大幅提高了某个动作的概率），<strong>对不起，我不按你实际的比值算了，我直接按 0.8 或者 1.2 这个天花板 / 地板价来算！</strong></li>
+</ul>
+<p><strong>这是什么概念？</strong><br>
+这就相当于，我不管你是想猛踩油门还是急刹车，我在你油门上装了个限速器，在你刹车踏板上装了块限位块。<strong>你想更新得太离谱？门都没有！你的梯度信号会被直接 “掐掉”！</strong></p>
+<p>更妙的是，这个 “掐掉” 是智能的。它只 “掐掉” 那些因为策略变化过大带来的<strong>额外好处</strong>（或坏处），策略向正确方向更新的核心梯度信号还保留着。</p>
+<p><strong>我说个具体的案例你秒懂：</strong><br>
+假设某个动作优势是正的（做了有好处）。</p>
+<ul>
+<li>旧策略下这个动作概率是 50%，新策略想调到 80%（比值 1.6）。对不起，超红线了，按 1.2 算。你只能得到 “调到 1.2 倍” 的奖励信号，剩下那部分 “贪心” 的信号，没了。</li>
+<li>如果优势是负的（做了是臭棋），新策略想从 50% 降到 10%（比值 0.2）。对不起，低于 0.8 红线了，按 0.8 算。你只能得到 “降到 0.8 倍” 的惩罚信号，避免了 “过度恐慌” 式的一刀切。</li>
+</ul>
+<p><strong>PPO-Clip 的精髓就是：在信任区域内（红线内），我让你自由发挥；一旦你想越界，我就当你没越界，按边界值处理。</strong>  用魔法打败魔法，用限制解决限制。</p>
+<p>它放弃了 TRPO 那套复杂的二阶验证和线搜索，就用简单的一阶优化（比如人人都会用的 Adam 优化器），加上这个物理 “夹子”，取得了奇迹般的效果：<strong>又快又稳。</strong></p>
+<p>从此，PPO 封神。因为它把握住了工程学的真谛：<strong>在百分之百的严谨和百分百的可用性之间，我选择那个能跑起来、效果还不赖的 95 分方案。</strong></p>
+<hr>
+<h3 id="最后再说点">最后再说点</h3>
+<p>从 PG 的 “大力出奇迹”，到 NG 的 “中医慢调理”，到 TRPO 的 “国企严风控”，再到 PPO 的 “互联网小步快跑，数据驱动，快速迭代”。</p>
+<p>你看明白了吗？这压根不是一个技术演进史。</p>
+<p><strong>这是一个 “如何与一个既需要成长、又容易学歪的智能体（可以是 AI，也可以是人）打交道” 的哲学史和斗争史。</strong></p>
+<p>核心矛盾就一个：<strong>既要马儿跑，又要马儿别乱跑。</strong></p>
+<p>你管得太松（PG），它容易跑飞了，彻底废掉。<br>
+你管得太死、太教条（NG），它畏首畏尾，进步缓慢。<br>
+你管得又严流程又复杂（TRPO），安全是安全了，但效率低下，心累。<br>
+最后，高手找到了那个平衡点（PPO）：<strong>划出明确的边界（红线），边界之内给你自由，边界之外信号屏蔽。用最简单的规则，解决最复杂的问题。</strong></p>
+<p>这套逻辑，放之四海而皆准。管理公司、教育孩子、甚至自我提升，不都是这个道理吗？</p>
+<p>设定一个合理的 “信任区域”（能力圈），在里面可劲儿造，大胆试错；一旦有超出能力圈的、过于冒进或恐慌的苗头，就要启动 “Clip 机制”—— 可能是自我提醒，可能是制度约束 —— 把它拉回安全范围。</p>
+<p>所以，别再看不起这个 PPO 了。它可能是这个复杂世界里，最简单、最实用的一种生存和发展智慧。</p>
+<p>它不保证你最优，但保证你<strong>一直在正确的方向上，安全地前进</strong>。</p>
+<p>这，难道还不够吗？</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/01/20/%E7%99%BD%E8%AF%9D%EF%BC%9A%E8%BF%91%E7%AB%AF%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96PPO/" title="白话：近端策略优化 PPO">https://cn-vhql.github.io/2026/01/20/白话：近端策略优化PPO/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag"># 工作</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/20/%E8%BF%99%E4%B8%96%E9%81%93%EF%BC%8C%E6%9C%80%E4%B8%8D%E5%80%BC%E9%92%B1%E7%9A%84%E5%B0%B1%E6%98%AF%E7%9F%A5%E9%81%93/" rel="prev" title="这世道，最不值钱的就是知道">
+                  <i class="fa fa-angle-left"></i> 这世道，最不值钱的就是知道
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
