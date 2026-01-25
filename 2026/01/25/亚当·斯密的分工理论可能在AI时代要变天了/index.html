@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前两天我瞅了眼后台，一堆刚被“毕业”的兄弟私信问我，说现在AI这么猛，是不是以后连写BUG的资格都没了？我揉了揉头顶，心想这问题问得，就跟问“太监是不是以后不用买避孕套”一样，既心酸又有点黑色幽默。 今天咱不扯虚的，就扒开那本被供在神坛上的《国富论》，用亚当·斯密老爷子的话当镜子，照照咱们这代“互联网流水线工人”的未来。结论我先放这儿：分工这玩意儿，曾经是咱们的饭碗，现在快成咱们的棺材板了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="亚当・斯密的分工理论可能在 AI 时代要变天了">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="前两天我瞅了眼后台，一堆刚被“毕业”的兄弟私信问我，说现在AI这么猛，是不是以后连写BUG的资格都没了？我揉了揉头顶，心想这问题问得，就跟问“太监是不是以后不用买避孕套”一样，既心酸又有点黑色幽默。 今天咱不扯虚的，就扒开那本被供在神坛上的《国富论》，用亚当·斯密老爷子的话当镜子，照照咱们这代“互联网流水线工人”的未来。结论我先放这儿：分工这玩意儿，曾经是咱们的饭碗，现在快成咱们的棺材板了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-25T12:25:00.000Z">
+<meta property="article:modified_time" content="2026-01-25T12:25:27.465Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="管理学">
+<meta property="article:tag" content="经济学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/","path":"2026/01/25/亚当·斯密的分工理论可能在AI时代要变天了/","title":"亚当・斯密的分工理论可能在 AI 时代要变天了"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>亚当・斯密的分工理论可能在 AI 时代要变天了 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B7%A5%EF%BC%9A%E4%B8%80%E5%9C%BA%E6%8C%81%E7%BB%AD%E4%BA%86%E4%B8%A4%E7%99%BE%E5%A4%9A%E5%B9%B4%E7%9A%84%E2%80%9C%E4%BA%A7%E7%BA%BF%E6%8B%A7%E8%9E%BA%E4%B8%9D%E2%80%9D%E7%9B%9B%E5%AE%B4"><span class="nav-number">1.</span> <span class="nav-text">分工：一场持续了两百多年的 “产线拧螺丝” 盛宴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%9A%E9%82%A3%E4%B8%AA%E6%9D%A5%E6%8B%86%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E2%80%9C%E6%88%90%E6%9C%AC%E5%B1%A0%E5%A4%AB%E2%80%9D"><span class="nav-number">2.</span> <span class="nav-text">大模型：那个来拆流水线的 “成本屠夫”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%92%B1%E4%BB%AC%E6%89%93%E5%B7%A5%E4%BA%BA%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9A%E4%B8%80%E5%9C%BA%E6%B8%A9%E6%9F%94%E8%80%8C%E5%BD%BB%E5%BA%95%E7%9A%84%E2%80%9C%E5%8E%BB%E6%8A%80%E8%83%BD%E5%8C%96%E2%80%9D"><span class="nav-number">3.</span> <span class="nav-text">对咱们打工人的影响：一场温柔而彻底的 “去技能化”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%82%B9%E6%89%8E%E5%BF%83%E4%BD%86%E6%88%96%E8%AE%B8%E6%9C%89%E7%94%A8%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="nav-number">4.</span> <span class="nav-text">一点扎心但或许有用的建议</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="亚当・斯密的分工理论可能在 AI 时代要变天了 | 知行录">
+      <meta itemprop="description" content="前两天我瞅了眼后台，一堆刚被“毕业”的兄弟私信问我，说现在AI这么猛，是不是以后连写BUG的资格都没了？我揉了揉头顶，心想这问题问得，就跟问“太监是不是以后不用买避孕套”一样，既心酸又有点黑色幽默。
+今天咱不扯虚的，就扒开那本被供在神坛上的《国富论》，用亚当·斯密老爷子的话当镜子，照照咱们这代“互联网流水线工人”的未来。结论我先放这儿：分工这玩意儿，曾经是咱们的饭碗，现在快成咱们的棺材板了。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          亚当・斯密的分工理论可能在 AI 时代要变天了
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-25 20:25:00 / 修改时间：20:25:27" itemprop="dateCreated datePublished" datetime="2026-01-25T20:25:00+08:00">2026-01-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">前两天我瞅了眼后台，一堆刚被“毕业”的兄弟私信问我，说现在AI这么猛，是不是以后连写BUG的资格都没了？我揉了揉头顶，心想这问题问得，就跟问“太监是不是以后不用买避孕套”一样，既心酸又有点黑色幽默。
+今天咱不扯虚的，就扒开那本被供在神坛上的《国富论》，用亚当·斯密老爷子的话当镜子，照照咱们这代“互联网流水线工人”的未来。结论我先放这儿：分工这玩意儿，曾经是咱们的饭碗，现在快成咱们的棺材板了。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>前两天我瞅了眼后台，一堆刚被 “毕业” 的兄弟私信问我，说现在 AI 这么猛，是不是以后连写 BUG 的资格都没了？我揉了揉头顶，心想这问题问得，就跟问 “太监是不是以后不用买避孕套” 一样，既心酸又有点黑色幽默。</p>
+<p>今天咱不扯虚的，就扒开那本被供在神坛上的《国富论》，用亚当・斯密老爷子的话当镜子，照照咱们这代 “互联网流水线工人” 的未来。结论我先放这儿：<strong>分工这玩意儿，曾经是咱们的饭碗，现在快成咱们的棺材板了。</strong></p>
+<h3 id="分工：一场持续了两百多年的“产线拧螺丝”盛宴">分工：一场持续了两百多年的 “产线拧螺丝” 盛宴</h3>
+<p>亚当・斯密老哥看得透啊。他说分工牛 X，牛在三点：</p>
+<ol>
+<li>你老干一个动作，比如拧螺丝，闭着眼睛都能拧出花来，这叫<strong>熟练度暴增</strong>。</li>
+<li>你不用一会儿拧螺丝，一会儿跑去写 PPT，<strong>省了切换频道的脑残时间</strong>。</li>
+<li>因为你老拧螺丝，痛点了然于胸，没准能发明个 “自动拧螺丝仙人掌”，这叫<strong>倒逼辅助发明</strong>。</li>
+</ol>
+<p><strong>翻译成人话就是：把一件复杂的事，拆成一堆傻子都能干的固定动作，然后找一堆 “专业傻子” 来干，效率直接起飞。</strong></p>
+<p>工业革命玩的是肉身流水线，一个造马车的活，拆成了做轮子的、做车厢的、做弹簧的。到了互联网黄金十年，玩的是 “脑力流水线”。造个 APP 这么复杂的事，愣是给拆成了：</p>
+<ul>
+<li><strong>产品经理</strong>：画饼的（定义 “我们要造个啥马车”）</li>
+<li><strong>UI / 交互</strong>：搞装修的（决定 “这马车漆什么颜色，座位怎么摆”）</li>
+<li><strong>前端</strong>：做壳的（造出 “看起来像马车” 的壳子）</li>
+<li><strong>后端</strong>：装发动机的（搞出 “让马车能跑” 的动力系统）</li>
+<li><strong>运维</strong>：修马蹄铁的（保证 “马车别半路散架”）</li>
+<li><strong>运营</strong>：站街拉客的（嚷嚷 “快来看我的豪华马车”）</li>
+</ul>
+<p>这套体系，在过去十年，堪称<strong>小镇做题家们最伟大、最体面的逆袭通道</strong>。管你老家是哪山沟的，只要你能在 “拧螺丝大赛”（高考）里胜出，再在大学里学会其中一门拧螺丝手艺（编程 / 设计等），就能挤进大厂流水线，领高薪，买鸽子笼，成为家族荣耀。<strong>分工创造了海量高薪职位，本质是时代给你发了一张 “高级技工证”，让你去一个新开的、巨大的流水线上，领一个固定工位。</strong></p>
+<p>爽吗？当时是爽的。但很多人没看明白，<strong>你爽，不是因为你不可替代，而是因为这条新流水线刚刚开张，急需人手，而且利润高到可以掩盖一切低效。</strong></p>
+<hr>
+<h3 id="大模型：那个来拆流水线的“成本屠夫”">大模型：那个来拆流水线的 “成本屠夫”</h3>
+<p>好，现在 “成本屠夫” 来了。它的逻辑简单粗暴到令人发指： <strong>“你们人类分工来分工去，不就是为了把一个复杂问题，拆解成一系列可重复的简单步骤吗？这事儿，我好像更擅长。”</strong></p>
+<p>以前，一个功能从想法到上线，是场漫长的 “人类传话游戏”：</p>
+<ol>
+<li>产品经理冥思苦想，跟老板博弈，搞出个 PRD（产品需求文档），这文档翻译得差点，技术就能理解成外星产物。</li>
+<li>UI 设计师看着 PRD 开始脑补，做出高保真原型，评审会上被怼 “感觉不对”。</li>
+<li>前端工程师看着设计图，骂骂咧咧地开始切图写页面。</li>
+<li>后端工程师看着产品给的接口文档，心想 “这需求 TM 是半夜梦游写的吧”。</li>
+<li>联调、测试、扯皮、延期…… 一个简单功能，沟通成本比开发成本还高。</li>
+</ol>
+<p><strong>大模型在干啥？它在试图一键打通这个链条。</strong></p>
+<ul>
+<li><strong>产品需求？</strong>  老板直接跟 AI 说：“给我做个像小红书但更炫酷的图片社区，重点推给二三线 Z 世代。” AI 瞬间生成一份带详细功能点、优先级、甚至市场数据分析的 PRD。那个 “画饼的” 产品经理，如果只会传话，价值就只剩给 AI 提鞋了。</li>
+<li><strong>UI 设计？</strong>  AI 根据 PRD，刷刷刷生成几十个风格不同的高保真页面，你选个顺眼的，说 “按钮大点，颜色骚点”，它秒改。那个 “搞装修的” 设计师，如果只会拼素材和调色板，核心竞争力就悬了。</li>
+<li><strong>前端代码？</strong>  AI 把设计图扔进去，直接吐出干干净净的 React / Vue 代码，甚至帮你把组件都拆好了。那个 “做壳的” 前端，如果只沉迷于 CSS 奇技淫巧，而不懂业务逻辑，就会发现自己拧的螺丝，AI 拧得又快又好。</li>
+<li><strong>后端接口？</strong>  AI 根据 PRD 和数据关系，直接把 API 设计和基础代码都写了，还附赠单元测试。那个 “装发动机的” 后端，如果只满足于 CRUD（增删改查），处境就危险了。</li>
+<li><strong>甚至运营文案、数据分析报告、基础运维脚本……</strong>  AI 都能给你一手包办，7x24 小时不眠不休，不开会不撕逼不闹情绪。</li>
+</ul>
+<p>看明白了吗？<strong>大模型不是要消灭 “前端” 或 “UI” 这个职位，它是要消灭 “把创造性脑力劳动，拆解成机械性执行动作” 这个分工模式本身。</strong>  它把原来需要十个人传球十次才能进球的游戏，变成了老板（或一个超级个体）带球直接射门。</p>
+<p>未来的互联网公司分工，会急剧向两极坍缩：</p>
+<p><strong>一极是 “提示词工程师 + 业务决策者” 的合体。</strong>  他们不再是 “画饼的”，而是 “定义世界规则” 的。他们需要极度懂业务、懂人性、懂商业，能向 AI 提出最精准、最富创造性的指令。他们是新流水线的<strong>设计师和监工</strong>。</p>
+<p><strong>另一极是 “AI 验尸官” 和 “关键节点专家”。</strong>  验尸官干啥？AI 生成的东西不是百分百可靠，需要有人（可能也需要 AI 辅助）进行关键性的审核、测试、纠偏和兜底，尤其是涉及重大商业逻辑、安全、用户体验细节的地方。而关键节点专家，是指在某个极狭窄、极高壁垒的领域（比如顶尖的算法优化、硬件底层、特定领域业务架构），人类智慧仍有决定性优势的专家。他们是新流水线的<strong>质检员和特种兵</strong>。</p>
+<p><strong>而中间那广大的、曾经体面的 “高级拧螺丝工” 阶层 —— 也就是我们大多数人 —— 会面临一个残酷的现实：你拧螺丝的手艺再精湛，也比不上一个不知疲倦、成本近乎为零的自动拧螺丝机器。</strong></p>
+<hr>
+<h3 id="对咱们打工人的影响：一场温柔而彻底的“去技能化”">对咱们打工人的影响：一场温柔而彻底的 “去技能化”</h3>
+<p>这对我们意味着什么？意味着亚当・斯密说的分工优势，正在我们身上发生<strong>恐怖的反转</strong>：</p>
+<ol>
+<li><strong>你的 “熟练度” 正在急速贬值。</strong>  你花了十年练就的 “手写精美 CSS”、“快速搭建 SpringBoot 脚手架” 的肌肉记忆，在 AI 面前不值一提。你的 “专业”，从护城河变成了即将干涸的小水沟。</li>
+<li><strong>“免除切换损耗” 的优势没了，因为 AI 没有损耗。</strong>  AI 可以瞬间在产品、设计、开发、文案的角色间无缝切换，而人类切换需要时间、需要沟通、会出错。你的 “协作成本” 成了你最大的短板。</li>
+<li><strong>“倒逼辅助发明” 的主体换人了。</strong>  以后不是 UI 设计师痛了发明 Sketch 插件，而是 AI 在学习了全人类的设计数据后，直接发明下一代设计工具和范式。人类个体从 “发明者” 更多变成了 “应用者” 和 “选择者”。</li>
+</ol>
+<p><strong>未来的职场，不再是 “一个萝卜一个坑” 的分工协作，而是 “一道闪电劈下来，能者全拿，庸者围观” 的超级个体竞技场。</strong></p>
+<p>资本会用脚投票：以前雇 10 个专科螺丝工，现在可能就雇 1 个 “提示词监工”+2 个 “AI 验尸官”，配上企业版 ChatGPT 和一堆 AI 工具。剩下 7 个人的工资，变成了老板的利润和股东的股息。<strong>这不是裁员，这是生产关系的重塑，残酷但符合经济规律。</strong></p>
+<hr>
+<h3 id="一点扎心但或许有用的建议">一点扎心但或许有用的建议</h3>
+<p>所以，兄弟们，别慌，但必须清醒。未来已来，只是分布不均。给你几条不保证成功，但大概率能保命的思路：</p>
+<ol>
+<li><strong>从 “熟练工” 转向 “策展人” 和 “连接器”。</strong>  你的价值不在于多会拧螺丝，而在于：<strong>第一，知道面对什么问题该用哪把 AI “螺丝刀”（工具选择与组合能力）；第二，能判断 AI 拧的这颗 “螺丝” 合不合格（关键审核与决策能力）；第三，能把 AI 产出的各种零件，组合成一个能解决真实商业问题的完整方案（系统整合与业务理解能力）。</strong>  说白了，从 “匠人” 变成 “包工头”。</li>
+<li><strong>疯狂提升你的 “业务体感” 和 “人性理解”。</strong>  AI 懂代码，懂设计规范，但它（目前）不懂你公司那个奇葩领导到底想要什么，不懂你的用户为什么在那个页面会突然流失，不懂怎么平衡技术债和老板的异想天开。<strong>你对业务、对人性的洞察，是你作为 “人” 最后的、也是最硬的堡垒。</strong></li>
+<li><strong>接受 “学习” 成为呼吸一样的常态。</strong>  别再指望一招鲜吃遍天。今天流行的 AI 工具，半年后可能就过时了。保持对新工具的饥渴感和上手速度，这不再是为了升职加薪，而是为了生存。</li>
+<li><strong>心态上，从 “职位占有者” 转向 “问题解决者”。</strong>  别再说 “我是个前端工程师”，而是说 “我能解决让用户界面高效响应的相关问题”。前者定义了一个即将被挤压的职位，后者定义了一种随时可以迁移和组合的能力。</li>
+</ol>
+<p>最后，亚当・斯密的分工理论，曾让社会普遍富裕。而 AI 驱动的 “再分工”（或者说 “去分工”），其带来的巨大财富增长，是否会再次 “普遍富裕”，还是聚集在极少数 “提示词资本家” 和 “AI 生产资料所有者” 手里，这恐怕就不是经济学问题，而是社会问题了。</p>
+<p>但无论如何，时代这辆马车，已经换上了 AI 发动机。你是选择去学怎么驾驭这匹新的钢铁烈马，还是继续怀念过去在旧马车上拧螺丝的安稳时光？</p>
+<p>答案是明摆着的，只是过程会有点疼。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/01/25/%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E7%9A%84%E5%88%86%E5%B7%A5%E7%90%86%E8%AE%BA%E5%8F%AF%E8%83%BD%E5%9C%A8AI%E6%97%B6%E4%BB%A3%E8%A6%81%E5%8F%98%E5%A4%A9%E4%BA%86/" title="亚当・斯密的分工理论可能在 AI 时代要变天了">https://cn-vhql.github.io/2026/01/25/亚当·斯密的分工理论可能在AI时代要变天了/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%80%9D%E8%80%83/" rel="tag"># 思考</a>
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"># 经济学</a>
+              <a href="/tags/%E7%AE%A1%E7%90%86%E5%AD%A6/" rel="tag"># 管理学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/25/AI%20%E6%AD%A3%E5%9C%A8%E5%88%9B%E9%80%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E3%80%81%E6%9B%B4%E9%AB%98%E7%BB%B4%E7%9A%84%E5%BF%AB%E6%84%9F%E5%A2%9E%E9%87%8F%E5%B8%82%E5%9C%BA%E2%80%8B/" rel="prev" title="AI 正在创造一个新的、更高维的快感增量市场​">
+                  <i class="fa fa-angle-left"></i> AI 正在创造一个新的、更高维的快感增量市场​
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
