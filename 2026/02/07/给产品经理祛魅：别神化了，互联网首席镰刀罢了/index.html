@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="别整那些虚的。 什么“用户体验的架构师”、“连接人与万物的梦想家”、“改变世界的魔法师”……扯。 在我看来，搞产品这行当，说白了，就是一群懂人性的骗子，合法地把用户的时间、注意力和钱，打包卖给资本。 今天，咱就扒开这层金光闪闪的遮羞布，用村口大爷下棋的视角，聊聊产品经理到底是个啥玩意儿。保证你听完，以后再看到那些满嘴“赋能”、“闭环”、“底层逻辑”的产品大佬，心里就俩字：呵呵。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给产品经理祛魅：别神化了，互联网首席镰刀罢了">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="别整那些虚的。 什么“用户体验的架构师”、“连接人与万物的梦想家”、“改变世界的魔法师”……扯。 在我看来，搞产品这行当，说白了，就是一群懂人性的骗子，合法地把用户的时间、注意力和钱，打包卖给资本。 今天，咱就扒开这层金光闪闪的遮羞布，用村口大爷下棋的视角，聊聊产品经理到底是个啥玩意儿。保证你听完，以后再看到那些满嘴“赋能”、“闭环”、“底层逻辑”的产品大佬，心里就俩字：呵呵。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-07T14:35:00.000Z">
+<meta property="article:modified_time" content="2026-02-07T14:35:04.194Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="产品">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="方法论">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/","path":"2026/02/07/给产品经理祛魅：别神化了，互联网首席镰刀罢了/","title":"给产品经理祛魅：别神化了，互联网首席镰刀罢了"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>给产品经理祛魅：别神化了，互联网首席镰刀罢了 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%83%E6%B3%95%E7%AF%87%EF%BC%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B8%8D%E6%98%AF%E7%A5%9E%E4%BB%99%EF%BC%8C%E6%98%AF%E6%87%82%E4%BA%BA%E6%80%A7%E7%9A%84%E8%80%81%E5%8D%83"><span class="nav-number">1.</span> <span class="nav-text">心法篇：产品经理不是神仙，是懂人性的老千</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E6%93%8D%E7%AF%87%EF%BC%9A%E4%BA%A7%E5%93%81%E7%8B%97%E6%97%A5%E5%B8%B8%E5%9C%A8%E5%B9%B2%E5%98%9B%EF%BC%9F%E5%BD%93%E2%80%9C%E5%90%88%E6%B3%95%E9%BB%84%E7%89%9B%E2%80%9D%E5%92%8C%E2%80%9C%E5%A5%97%E8%B7%AF%E8%AE%BE%E8%AE%A1%E5%B8%88%E2%80%9D"><span class="nav-number">2.</span> <span class="nav-text">实操篇：产品狗日常在干嘛？当 “合法黄牛” 和 “套路设计师”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E8%B4%A8%E7%AF%87%EF%BC%9A%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E4%B8%8E%E4%BC%81%E4%B8%9A%EF%BC%9F%E4%B8%8D%EF%BC%8C%E6%98%AF%E5%B8%AE%E8%B5%84%E6%9C%AC%E9%AB%98%E6%95%88%E5%89%B2%E9%9F%AD%E8%8F%9C"><span class="nav-number">3.</span> <span class="nav-text">本质篇：连接用户与企业？不，是帮资本高效割韭菜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%9F%E7%9B%B8%E7%AF%87%EF%BC%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E5%AE%BF%E5%91%BD%E4%B8%8E%E9%9F%AD%E8%8F%9C%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB"><span class="nav-number">4.</span> <span class="nav-text">真相篇：产品经理的宿命与韭菜的自我修养</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="给产品经理祛魅：别神化了，互联网首席镰刀罢了 | 知行录">
+      <meta itemprop="description" content="别整那些虚的。
+什么“用户体验的架构师”、“连接人与万物的梦想家”、“改变世界的魔法师”……扯。
+在我看来，搞产品这行当，说白了，就是一群懂人性的骗子，合法地把用户的时间、注意力和钱，打包卖给资本。
+今天，咱就扒开这层金光闪闪的遮羞布，用村口大爷下棋的视角，聊聊产品经理到底是个啥玩意儿。保证你听完，以后再看到那些满嘴“赋能”、“闭环”、“底层逻辑”的产品大佬，心里就俩字：呵呵。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          给产品经理祛魅：别神化了，互联网首席镰刀罢了
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-02-07 22:35:00 / 修改时间：22:35:04" itemprop="dateCreated datePublished" datetime="2026-02-07T22:35:00+08:00">2026-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%9D%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">思考</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">别整那些虚的。
+什么“用户体验的架构师”、“连接人与万物的梦想家”、“改变世界的魔法师”……扯。
+在我看来，搞产品这行当，说白了，就是一群懂人性的骗子，合法地把用户的时间、注意力和钱，打包卖给资本。
+今天，咱就扒开这层金光闪闪的遮羞布，用村口大爷下棋的视角，聊聊产品经理到底是个啥玩意儿。保证你听完，以后再看到那些满嘴“赋能”、“闭环”、“底层逻辑”的产品大佬，心里就俩字：呵呵。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>别整那些虚的。</p>
+<p>什么 “用户体验的架构师”、“连接人与万物的梦想家”、“改变世界的魔法师”…… 扯。</p>
+<p>在我看来，搞产品这行当，说白了，就是<strong>一群懂人性的骗子，合法地把用户的时间、注意力和钱，打包卖给资本</strong>。</p>
+<p>今天，咱就扒开这层金光闪闪的遮羞布，用村口大爷下棋的视角，聊聊产品经理到底是个啥玩意儿。保证你听完，以后再看到那些满嘴 “赋能”、“闭环”、“底层逻辑” 的产品大佬，心里就俩字：呵呵。</p>
+<hr>
+<h3 id="心法篇：产品经理不是神仙，是懂人性的老千">心法篇：产品经理不是神仙，是懂人性的老千</h3>
+<p>什么 “用户不是人，是需求的集合”？这话听起来玄乎，翻译成人话就是：<strong>别把用户当人看，要当猎物看</strong>。</p>
+<p>你琢磨琢磨，你每天刷短视频停不下来，是因为 App 爱你吗？不，是因为它背后那帮产品狗，把你 “即时满足”、“寻求刺激” 的人性弱点，摸得门儿清。就像赌场里最厉害的老千，他不研究牌，他研究你。</p>
+<p>俞军说产品经理要学经济学和心理学。太对了。但学来干嘛？经济学教你<strong>算账</strong>，算怎么用最低成本（带宽、服务器、开发工时）从用户身上榨出最大收益（日活、留存、GMV）。心理学教你<strong>下套</strong>，套住你的注意力，让你心甘情愿付出代价。</p>
+<p>你看那个公式：产品价值 = 新体验 - 旧体验 - 替换成本。</p>
+<p>这公式的精髓在哪？后半句，“<strong>降低替换成本</strong>”。</p>
+<p>说白了，就是给你制造<strong>迁移牢笼</strong>。你的社交关系全在微信里，换一个？成本高到吓死人。你的购物习惯、收货地址全在淘宝里，换一个？麻烦到你想死。你的工作流全在飞书里，换一个？团队先把你打死。</p>
+<p>产品经理一半的智慧，都用在这了：怎么让你进来容易，出去难。跟电信运营商一个德性，入网免费，携号转网？嘿，门槛给你设到天上去。</p>
+<hr>
+<h3 id="实操篇：产品狗日常在干嘛？当“合法黄牛”和“套路设计师”">实操篇：产品狗日常在干嘛？当 “合法黄牛” 和 “套路设计师”</h3>
+<p>别信招聘 JD 上写的 “规划星辰大海”。一个秃头打工人产品经理的日常，就三件事：</p>
+<p><strong>1. 当 “信息二道贩子”</strong> ：把老板拍脑袋的需求、运营哭爹喊娘的要支持、用户骂娘的吐槽，还有自己从数据后台扒拉出来的可疑曲线，混在一起，捣鼓捣鼓，包装成一个 “逻辑严密、前景光明” 的需求文档。本质就是<strong>把一堆不可靠的信息，加工成看起来可靠的产品方案</strong>，然后去忽悠程序员哥哥们开干。</p>
+<p><strong>2. 当 “资源争夺战地记者”</strong> ：产品经理没有一兵一卒，却要推动千军万马。核心技能是啥？<strong>哭惨、画饼、甩锅、和稀泥</strong>。跟技术说 “这个需求简单，就加个按钮”；跟设计说 “这个感觉不对，要更有情怀”；跟老板说 “资源不够，进度 delay 了都怪隔壁部门不配合”。活脱脱一个办公室政治生存大师。</p>
+<p><strong>3. 当 “人性的微观操盘手”</strong> ：每天琢磨的都是些 “下三路” 问题：</p>
+<ul>
+<li>怎么让 “跳过广告” 的按钮颜色淡一点，再淡一点，最好让人不小心就点到广告？</li>
+<li>怎么设计红包弹窗，让你明明知道大概率是 0.01 元，还是忍不住去点？</li>
+<li>怎么在你想要退出的时候，弹个 “残忍离开” 的挽留弹窗，让你心生愧疚？</li>
+<li>怎么把 “连续包月首月优惠” 的勾选框，默认给你勾上，而且取消入口藏得比你们公司年终奖还深？</li>
+</ul>
+<p>这叫什么？美其名曰 “用户体验设计”，行业黑话叫<strong> Dark Patterns（黑暗模式）</strong> ，说人话就是：<strong>合法坑你没商量的交互陷阱</strong>。</p>
+<hr>
+<h3 id="本质篇：连接用户与企业？不，是帮资本高效割韭菜">本质篇：连接用户与企业？不，是帮资本高效割韭菜</h3>
+<p>企业以产品为媒介，与用户进行价值交换。这话听着挺中性。</p>
+<p>但真相是：<strong>这交换从来就不对等</strong>。</p>
+<p>企业要的是真金白银、增长数据、市场占有率。用户付出的是时间、隐私、注意力，以及那点可怜的 “效用满足感”。产品经理，就是那个把天平狠狠踩向企业一边的人。</p>
+<p>他们说 “创造用户价值”。来，翻译一下：<strong>用户价值</strong>  <strong>=</strong>  <strong>让用户觉得爽，但别太爽，要可持续地、低成本地让他爽，以便我们能持续地、高价地卖他</strong>。</p>
+<p>你看那些成功的产品，本质就一个模式：<strong>打破旧平衡，建立对自己有利的新链条</strong>。</p>
+<p>滴滴干掉了路边扬手的不确定性（旧体验），给了你手机叫车的确定性（新体验），代价是初期烧钱补贴帮你养成习惯（降低替换成本）。等习惯养成了，市场垄断了，大数据杀熟、高峰期溢价、司机抽成上涨…… 一套组合拳就来了。当初给你的一块糖，现在要你连本带利还回来，还得搭上你的出行数据。</p>
+<p>拼多多更是把 “交易模型” 玩成了教科书。它的核心不是货，是<strong>游戏化的社交裂变链路</strong>。砍一刀的本质是什么？是利用你的 “人情” 和 “面子”，近乎零成本地获取新用户。你以为在占便宜，实际上你和你的人际关系网，都成了它流量帝国里一个嗷嗷待哺的数据节点。</p>
+<p><strong>一个好产品？三个标准：有用，能赚钱，可持续。</strong></p>
+<ul>
+<li>对用户有用：是鱼饵，得让鱼肯咬钩。</li>
+<li>对企业能赚钱：是渔网，得能把鱼捞上来。</li>
+<li>可持续：是鱼塘生态，不能一次把鱼捞光，得细水长流地捞。</li>
+</ul>
+<p>产品经理的所有工作，都是围绕这三点展开的<strong>精细化运营</strong>。情怀？梦想？那是融资 PPT 和校招宣讲会上用的。</p>
+<hr>
+<h3 id="真相篇：产品经理的宿命与韭菜的自我修养">真相篇：产品经理的宿命与韭菜的自我修养</h3>
+<p>为什么说产品经理上限高，下限也低？</p>
+<p>因为互联网这行当，<strong>试错成本低，抄袭成本更低</strong>。你吭哧吭哧研究用户模型、设计交易闭环，可能不如隔壁厂直接 “像素级致敬” 来得快。你的 “洞察” 和 “试错”，在资本家眼里，可能还不如一次成功的 “搬运”。</p>
+<p>这行也是 “阿罗信息悖论” 的重灾区：你<strong>很难证明一个产品的成功，究竟多大程度上归功于你的牛逼洞察，还是纯粹的狗屎运</strong>（比如踩中了风口，或者老板的小姨子突然成了网红带火了产品）。成功了，是平台和时代的力量；失败了，锅就是你产品经理的。</p>
+<p>所以，别迷信产品经理能改变世界。他们更多是在<strong>复杂的约束条件下（技术、资源、时间、老板的奇葩喜好），做出一套效用组合方案，然后祈祷市场买账</strong>。</p>
+<p>那作为用户，咱们怎么避免被产品经理们当猴耍？</p>
+<p>记住几个心法：</p>
+<ol>
+<li><strong>警惕所有 “免费”</strong> ：免费的不是产品，你才是产品。你的数据、注意力、人际关系，都是明码标价的商品。</li>
+<li><strong>看懂 “交换” 本质</strong>：每次点下一个按钮，想想你付出了什么（时间、隐私、社交压力），又换回了什么。这交易划算吗？</li>
+<li><strong>保持 “有限理性”</strong> ：承认吧，咱们都是情绪动物，都会中 “损失厌恶”、“从众心理” 的招。在消费和沉迷前，强行让自己 “慢思考” 三秒。</li>
+<li><strong>明白 “企业不是做慈善”</strong> ：所有让你爽翻天的设计，背后都有一张清晰的 ROI（投资回报率）计算表。爽，是诱饵，不是目的。</li>
+</ol>
+<p>说到底，商业世界就是一个巨大的交易场。产品经理，无非是其中一批更懂规则、更会设计交易环节的 “高级玩家” 罢了。</p>
+<p>咱们普通人，不必神化他们，也不必憎恶他们。看透这套游戏规则，然后<strong>利用产品，而不是被产品奴役</strong>；<strong>享受便利，同时捂紧自己的时间和钱包</strong>。</p>
+<p>这就够了。</p>
+<p>毕竟，在镰刀眼里，到处都是韭菜。而唯一的反杀之道，就是你得先学会认出，哪把是镰刀。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/02/07/%E7%BB%99%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%A5%9B%E9%AD%85%EF%BC%9A%E5%88%AB%E7%A5%9E%E5%8C%96%E4%BA%86%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E9%A6%96%E5%B8%AD%E9%95%B0%E5%88%80%E7%BD%A2%E4%BA%86/" title="给产品经理祛魅：别神化了，互联网首席镰刀罢了">https://cn-vhql.github.io/2026/02/07/给产品经理祛魅：别神化了，互联网首席镰刀罢了/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%80%9D%E8%80%83/" rel="tag"># 思考</a>
+              <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag"># 方法论</a>
+              <a href="/tags/%E4%BA%A7%E5%93%81/" rel="tag"># 产品</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/02/07/3%E5%88%86%E9%92%9F%E7%9C%8B%E6%98%8E%E7%99%BD%E7%9A%84%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E5%AD%A6/" rel="prev" title="3 分钟看明白的交互设计学">
+                  <i class="fa fa-angle-left"></i> 3 分钟看明白的交互设计学
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/02/07/%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%B8%8D%E5%AD%A6%E8%AE%BE%E8%AE%A1%EF%BC%8C%E4%BD%86%E5%BE%97%E6%87%82%E5%8F%8D%E8%AE%BE%E8%AE%A1/" rel="next" title="你可以不学设计，但得懂反设计">
+                  你可以不学设计，但得懂反设计 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
