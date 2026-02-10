@@ -4,20 +4,27 @@
 
     <url>
         <loc>https://cn-vhql.github.io/tags/%E4%BA%A7%E5%93%81/</loc>
-        <lastmod>2026-02-07T14:36:17.140Z</lastmod>
+        <lastmod>2026-02-10T13:53:13.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://cn-vhql.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-        <lastmod>2026-02-07T14:36:17.140Z</lastmod>
+        <loc>https://cn-vhql.github.io/tags/AI/</loc>
+        <lastmod>2026-02-10T13:53:13.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://cn-vhql.github.io/tags/%E6%80%9D%E8%80%83/</loc>
+        <lastmod>2026-02-10T13:53:13.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://cn-vhql.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
         <lastmod>2026-02-07T14:36:17.140Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -32,13 +39,6 @@
 
     <url>
         <loc>https://cn-vhql.github.io/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc>
-        <lastmod>2026-01-25T12:25:27.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://cn-vhql.github.io/tags/AI/</loc>
         <lastmod>2026-01-25T12:25:27.465Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
