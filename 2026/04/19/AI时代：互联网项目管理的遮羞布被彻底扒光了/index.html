@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="先说结论：传统互联网项目管理就是一场大型扯皮现场。80%的时间都在内耗，20%的时间才在干活。今天带你看看这个荒谬至极的现实。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 时代：互联网项目管理的遮羞布被彻底扒光了">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="先说结论：传统互联网项目管理就是一场大型扯皮现场。80%的时间都在内耗，20%的时间才在干活。今天带你看看这个荒谬至极的现实。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-19T03:09:00.000Z">
+<meta property="article:modified_time" content="2026-04-19T03:09:01.502Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="思考">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/","path":"2026/04/19/AI时代：互联网项目管理的遮羞布被彻底扒光了/","title":"AI 时代：互联网项目管理的遮羞布被彻底扒光了"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AI 时代：互联网项目管理的遮羞布被彻底扒光了 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%BF%99%E7%8E%A9%E6%84%8F%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%B0%B1%E6%98%AF%E4%BA%BA%E8%82%89%E5%86%85%E8%80%97%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">一、这玩意的本质就是人肉内耗机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%9A%E5%BD%93%E6%96%AF%E5%AF%86%E8%80%81%E7%88%B7%E5%AD%90%E8%A6%81%E4%BB%8E%E6%A3%BA%E6%9D%90%E9%87%8C%E7%88%AC%E5%87%BA%E6%9D%A5"><span class="nav-number">2.</span> <span class="nav-text">二、为什么亚当斯密老爷子要从棺材里爬出来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81AI%E6%9D%A5%E4%BA%86%EF%BC%8C%E9%81%AE%E7%BE%9E%E5%B8%83%E5%BD%BB%E5%BA%95%E8%A2%AB%E6%92%95%E7%A2%8E"><span class="nav-number">3.</span> <span class="nav-text">三、AI 来了，遮羞布彻底被撕碎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%BF%99%E4%B8%8D%E6%98%AF%E6%8A%80%E6%9C%AF%E5%B9%B3%E6%9D%83%EF%BC%8C%E8%BF%99%E6%98%AF%E8%83%BD%E5%8A%9B%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">四、这不是技术平权，这是能力放大器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">5.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AI 时代：互联网项目管理的遮羞布被彻底扒光了 | 知行录">
+      <meta itemprop="description" content="先说结论：传统互联网项目管理就是一场大型扯皮现场。80%的时间都在内耗，20%的时间才在干活。今天带你看看这个荒谬至极的现实。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI 时代：互联网项目管理的遮羞布被彻底扒光了
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-04-19 11:09:00 / 修改时间：11:09:01" itemprop="dateCreated datePublished" datetime="2026-04-19T11:09:00+08:00">2026-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">先说结论：传统互联网项目管理就是一场大型扯皮现场。80%的时间都在内耗，20%的时间才在干活。今天带你看看这个荒谬至极的现实。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>先说结论：传统互联网项目管理就是一场大型扯皮现场。80% 的时间都在内耗，20% 的时间才在干活。今天带你看看这个荒谬至极的现实。</p>
+<h3 id="一、这玩意的本质就是人肉内耗机">一、这玩意的本质就是人肉内耗机</h3>
+<p>说白了，传统互联网团队分工就一个逻辑。把简单事情复杂化，然后靠扯皮养活一群人。</p>
+<p>你以为是专业分工？人家眼里这就是甩锅大会。一个小小的功能需求，需要产品经理写文档，其实就是在编故事。UI 设计师画图，改 100 遍还是第一版好看。前端开发抱怨设计不合理，后端开发说需求不明确。测试工程师发现一堆问题但没人认，算法工程师表示这跟我没关系。</p>
+<p>然后呢？开会！开会！还是开会！需求会、评审会、站会、复盘会、对齐会。会议套会议，扯皮连扯皮。你以为在推进项目？其实就是在互相推诿责任。</p>
+<h3 id="二、为什么亚当斯密老爷子要从棺材里爬出来">二、为什么亚当斯密老爷子要从棺材里爬出来</h3>
+<p>简单来讲，真正的分工协作应该是这样的。各司其职，无缝衔接，效率最大化。</p>
+<p>但现在的互联网项目管理是什么鬼？产品经理不懂技术瞎指挥，开发不懂业务乱实现。设计不懂用户纯自嗨，测试不懂场景瞎点点。这不是分工，这是分锅。</p>
+<p>每个人除了本职工作，还要精通甩锅话术。要会说 "这个需求当初不是这样说的"。要会推诿 "这个要等 XX 那边确认"。要会摸鱼，开会时偷偷刷手机。要会表演，假装很忙其实啥也没干。</p>
+<p>项目成功不看能力，看谁更能扯。我见过太多项目，技术大牛被沟通能力差淘汰。业务专家被不会甩锅坑死。踏实干活的背了所有锅，嘴炮王者升职加薪。这个世界就是这么魔幻。</p>
+<h3 id="三、AI来了，遮羞布彻底被撕碎">三、AI 来了，遮羞布彻底被撕碎</h3>
+<p>记住一句话：AI 不会跟你扯皮，但会直接淘汰你。</p>
+<p>现在的情况变了。产品经理发现，跟 AI 沟通比跟人沟通简单多了。开发发现，AI 写的代码比某些同事靠谱多了。设计发现，AI 出的方案比某些甲方满意多了。测试发现，AI 找的 bug 比人工全面多了。</p>
+<p>AI 不会开会时玩手机，不会需求变更时甩锅，不会加班时抱怨连连，不会拿钱时不干事。AI 只会专注干活，快速迭代，持续优化，不要工资。</p>
+<p>管一群 AI，比管一群祖宗轻松一万倍。你只需要专注核心事务，剩下的事情 AI 给你搞定。以前管人，80% 时间在沟通扯皮。现在管 AI，80% 时间在创造价值。</p>
+<h3 id="四、这不是技术平权，这是能力放大器">四、这不是技术平权，这是能力放大器</h3>
+<p>别被忽悠了。AI 带来的不是平权，而是更大的分化。</p>
+<p>对于有能力的人，这是黄金时代。原本受限于团队水平，现在一个人能干一个团队的活。效率提升 10 倍不止，AI 是翅膀，带你飞得更高更远。</p>
+<p>对于没能力的人，这是末日审判。原本靠混日子还能生存，现在连混的资格都没有了。因为 AI 都比你强，AI 是照妖镜，照出你的真实水平。</p>
+<p>聪明人用 AI 放大优势，蠢人被 AI 照出原形。那些还在靠扯皮混日子的人要小心了。你的甩锅技能在 AI 面前毫无用处，你的摸鱼艺术在 AI 面前显得可笑，你的表演能力在 AI 面前就是笑话。</p>
+<p>AI 时代，只认真实力。有想法的人通过 AI 放大能力，没想法的人被 AI 无情淘汰。这不是技术平权，这是能力筛选器。</p>
+<h3 id="结尾">结尾</h3>
+<p>这是一个伟大的时代，也是一个悲哀的时代。</p>
+<p>伟大在于，真正有能力的人终于可以摆脱内耗。可以专注创造价值，不用再浪费时间在扯皮上。悲哀在于，那些只会扯皮的人，连最后的遮羞布都被扯掉了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/04/19/AI%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%81%AE%E7%BE%9E%E5%B8%83%E8%A2%AB%E5%BD%BB%E5%BA%95%E6%89%92%E5%85%89%E4%BA%86/" title="AI 时代：互联网项目管理的遮羞布被彻底扒光了">https://cn-vhql.github.io/2026/04/19/AI时代：互联网项目管理的遮羞布被彻底扒光了/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%80%9D%E8%80%83/" rel="tag"># 思考</a>
+              <a href="/tags/AI/" rel="tag"># AI</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/22/%E4%BB%8E%E4%BB%A3%E7%A0%81%E5%88%B0%E7%94%9F%E5%91%BD%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E5%88%9B%E9%80%A0%E6%95%B0%E5%AD%97%E7%94%9F%E5%91%BD%E7%9A%84%E5%AE%9E%E9%AA%8C/" rel="prev" title="从代码到生命：一个产品经理创造数字生命的实验">
+                  <i class="fa fa-angle-left"></i> 从代码到生命：一个产品经理创造数字生命的实验
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/04/19/%E8%AE%A9%E4%B8%9A%E5%8A%A1%E4%BA%BA%E5%91%98%E4%B9%9F%E8%83%BD%E8%B7%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%88%91%E5%BC%80%E6%BA%90%E4%BA%86%E8%BF%99%E6%AC%BE%E9%9B%B6%E4%BB%A3%E7%A0%81%E6%A1%8C%E9%9D%A2%E5%B7%A5%E5%85%B7/" rel="next" title="让业务人员也能跑机器学习：我开源了这款零代码桌面工具">
+                  让业务人员也能跑机器学习：我开源了这款零代码桌面工具 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
