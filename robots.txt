@@ -4,10 +4,9 @@ Allow: /categories/
 Allow: /tags/
 Allow: /archives/
 
+# 静态资源目录，无需被索引
 Disallow: /js/
 Disallow: /css/
-Disallow: /images/
-Disallow: /tags/
 Disallow: /fancybox/
 
 Sitemap: https://cn-vhql.github.io/sitemap.xml
