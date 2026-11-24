@@ -3,22 +3,22 @@
 
 
     <url>
-        <loc>https://cn-vhql.github.io/tags/%E4%BA%A7%E5%93%81/</loc>
-        <lastmod>2026-06-21T12:13:37.055Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://cn-vhql.github.io/tags/AI/</loc>
-        <lastmod>2026-04-19T03:44:14.727Z</lastmod>
+        <lastmod>2026-11-24T02:00:32.195Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://cn-vhql.github.io/tags/%E6%80%9D%E8%80%83/</loc>
-        <lastmod>2026-04-19T03:44:14.727Z</lastmod>
+        <lastmod>2026-11-24T02:00:32.195Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://cn-vhql.github.io/tags/%E4%BA%A7%E5%93%81/</loc>
+        <lastmod>2026-06-21T12:13:37.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
