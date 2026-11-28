@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cn-vhql.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#c8a050","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止">
+<meta property="og:url" content="https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/index.html">
+<meta property="og:site_name" content="知行录">
+<meta property="og:description" content="过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-28T08:22:00.000Z">
+<meta property="article:modified_time" content="2026-11-28T08:23:33.941Z">
+<meta property="article:author" content="知行录">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<link rel="canonical" href="https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/","path":"2026/11/28/AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止/","title":"AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止 | 知行录</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
+  <script async src="https://hm.baidu.com/hm.js?48299fcfef6256f6978052850437e642"></script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="知行录" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="知行录" type="application/rss+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cn-vhql.github.io/2026/11/28/AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止/"},"headline":"AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止","description":"过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。","image":["https://cn-vhql.github.io/images/default-banner.png"],"datePublished":"2026-11-28T08:22:00.000Z","dateModified":"2026-11-28T08:23:33.941Z","author":{"@type":"Person","name":"知行录"},"publisher":{"@type":"Organization","name":"知行录","logo":{"@type":"ImageObject","url":"https://cn-vhql.github.io/images/default-banner.png"}},"keywords":"AI","articleSection":"AI","inLanguage":"zh-CN","url":"https://cn-vhql.github.io/2026/11/28/AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止/"}</script><meta property="og:image" content="https://cn-vhql.github.io/images/default-banner.png"><meta property="og:image:alt" content="AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://cn-vhql.github.io/images/default-banner.png"><meta name="keywords" content="AI"><meta name="author" content="知行录"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">知行录</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">读书、思考、实践、记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%85%88%E8%AF%B4%E6%B8%85%E6%A5%9A%EF%BC%9A%E4%B8%A4%E4%B8%AA%E8%A1%A8%E6%A0%BC%E7%9B%B8%E4%B9%98%EF%BC%8C%E6%80%8E%E4%B9%88%E7%AE%97%E5%BF%AB%E7%AE%97%E6%85%A2"><span class="nav-number">1.</span> <span class="nav-text">一、先说清楚：两个表格相乘，怎么算快算慢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%8157-%E5%B9%B4%EF%BC%8C%E4%BA%BA%E7%B1%BB%E4%B8%80%E7%9B%B4%E5%9C%A8%E7%A3%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">二、57 年，人类一直在磨同一个小数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%9D%91%EF%BC%9A%E5%85%89%E6%98%AF-%E6%9C%89%E6%9B%B4%E5%BF%AB%E7%9A%84%E6%96%B9%E6%B3%95-%EF%BC%8C%E4%BB%80%E4%B9%88%E4%B9%9F%E8%AF%B4%E6%98%8E%E4%B8%8D%E4%BA%86"><span class="nav-number">3.</span> <span class="nav-text">三、真正的坑：光是 &quot;有更快的方法&quot;，什么也说明不了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81AI-%E8%BF%99%E6%AC%A1%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9A%E5%85%88%E5%81%87%E8%AE%BE%E5%AE%83%E8%83%BD%E6%9B%B4%E5%BF%AB%EF%BC%8C%E7%84%B6%E5%90%8E%E6%8E%A8%E5%87%BA%E8%8D%92%E5%94%90"><span class="nav-number">4.</span> <span class="nav-text">四、AI 这次干了什么：先假设它能更快，然后推出荒唐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%BF%99%E6%AC%A1%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%9A%E4%BD%9C%E8%80%85%E6%A0%8F%E6%B2%A1%E6%9C%89%E5%90%8D%E5%AD%97"><span class="nav-number">5.</span> <span class="nav-text">五、这次不一样的地方：作者栏没有名字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%85%88%E5%88%AB%E6%80%A5%E7%9D%80%E5%BA%86%E7%A5%9D"><span class="nav-number">6.</span> <span class="nav-text">六、先别急着庆祝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%9C%80%E5%90%8E"><span class="nav-number">7.</span> <span class="nav-text">七、最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="知行录"
+      src="https://github.com/cn-vhql.png">
+  <p class="site-author-name" itemprop="name">知行录</p>
+  <div class="site-description" itemprop="description">知行合一，记录路上的所见、所闻、所思</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cn-vhql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cn-vhql" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yl_zhangqiang@foxmail.com" title="E-Mail → mailto:yl_zhangqiang@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/cn-vhql.png">
+      <meta itemprop="name" content="知行录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行录">
+      <meta itemprop="description" content="知行合一，记录路上的所见、所闻、所思">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止 | 知行录">
+      <meta itemprop="description" content="过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-11-28 16:22:00 / 修改时间：16:23:33" itemprop="dateCreated datePublished" datetime="2026-11-28T16:22:00+08:00">2026-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>1969 年，一个叫 Strassen 的德国数学家发现：算两个 2×2 的小表格相乘，本来要 8 次乘法，7 次就够。</p>
+<p>省了一次。</p>
+<p>就为这一下，全世界最聪明的一批人，接力跑了 57 年。</p>
+<p>2026 年 11 月，一篇 111 页的论文宣布：到底了，再也不能更省了。</p>
+<p>论文作者栏上，只有三个字：OpenAI。</p>
+<p>没有人类的名字。</p>
+<h2 id="一、先说清楚：两个表格相乘，怎么算快算慢">一、先说清楚：两个表格相乘，怎么算快算慢</h2>
+<p>"矩阵乘法" 听着吓人，其实就是两张表格相乘。</p>
+<p>举个最生活的例子：一张表是 "每道菜多少钱"，另一张表是 "每桌各点了几份"，两张一乘，就能算出 "每桌该结多少账"。</p>
+<p>你手机里的滤镜、游戏里的 3D 画面、AI 训练模型，底层干的都是这件事 —— 只不过表格大得多。</p>
+<p>假设两张表格都是 1000 行 1000 列。按学校教的办法，要算出一百万个格子，每个格子都得把一整行和一整列乘一遍、再加起来。</p>
+<p>算下来大概 <strong>10 亿次乘法</strong>。</p>
+<p>太慢了。所以数学家一直在问：能不能少算点？</p>
+<p>这里有个关键：表格变大时，计算量不是线性涨的，是按 "指数" 涨的。这个指数，记作 <strong>ω</strong>。</p>
+<p>翻译成人话：表格边长翻一倍，计算量不是翻一倍，是猛涨一大截。</p>
+<p>这事就像请客吃饭。客人从 10 个变成 20 个，不是多买一倍菜就完事 —— 桌子要换大的、座位要重排、谁坐谁旁边得重新算，连上菜路线都变了。<strong>规模翻倍，麻烦不止翻倍。</strong></p>
+<p>说人话就是：<strong>ω 越小，同样的表格算得越快。</strong></p>
+<p>举个例子你就明白差距有多大了：</p>
+<ul>
+<li>如果 ω = 3，1000×1000 的表格要算 <strong>10 亿次</strong>；</li>
+<li>如果 ω = 2.25，只要算大约 <strong>560 万次</strong>。</li>
+</ul>
+<p>差了将近两百倍。这不是优化，这是换了个世界。</p>
+<h2 id="二、57-年，人类一直在磨同一个小数">二、57 年，人类一直在磨同一个小数</h2>
+<p>1969 年，Strassen 把 ω 压到 2.81。</p>
+<p>从那以后，这个数字被一点一点往下抠：2.81 → 2.38 → 2.37……</p>
+<p>到 2026 年 8 月，全世界的纪录是 <strong>2.371177</strong>。</p>
+<p>小数点后六位。</p>
+<p>半个多世纪，几代数学家，就为了这小尾巴上的几位数。</p>
+<p>而且学界一直有个美好的猜想：表格本来只有 n² 个输出格子，所以理论上，是不是能一直逼近 2？</p>
+<p>听着很顺，甚至像理所当然。</p>
+<p>但 ——<strong> 没人证过。</strong></p>
+<h2 id="三、真正的坑：光是-有更快的方法-，什么也说明不了">三、真正的坑：光是 "有更快的方法"，什么也说明不了</h2>
+<p>这一节是全文最要紧的地方，也是最容易被跳过的。</p>
+<p><strong>“找到一个更快的算法 "和" 证明不可能有更快的算法”，完全是两回事。</strong></p>
+<p>打个比方。你想知道从北京开车到上海，最快多久？</p>
+<p>第一次，有人 5 小时到了。你知道了：最快不超过 5 小时。</p>
+<p>第二次，有人 4 小时到了。那最快不超过 4 小时。</p>
+<p>可你永远不知道，到底能不能 3 小时、2 小时。因为<strong>总可能还有个人没出发</strong>。</p>
+<p>前面这些叫 "上界"—— 能找到多快，就是多快。说白了，它是一个 "最好成绩"。</p>
+<p>但要回答 "到底最快多久"，光有记录不够。你得证明：<strong>无论怎么开，都不可能少于某个时间。</strong></p>
+<p>这叫 "下界"。</p>
+<p>一个靠 "找到"，一个靠 "证明不可能"。</p>
+<p>再举个更直观的例子：要证明 "这栋楼里有猫"，你把猫抱出来就行。可要证明 "这栋楼里一只猫都没有"，你得把每个房间、每个柜子、每个纸箱全翻一遍 —— 而且还得防着明天有人抱一只进来。</p>
+<p>前者是找到，后者是排除。</p>
+<p>难度根本不在一个量级。</p>
+<p>而过去 57 年发生了什么？<strong>上界被刷新了十几次，下界几乎没动过。</strong></p>
+<p>也就是说：大家一直在跑道上刷成绩，但从来没人量过跑道有多长。</p>
+<h2 id="四、AI-这次干了什么：先假设它能更快，然后推出荒唐">四、AI 这次干了什么：先假设它能更快，然后推出荒唐</h2>
+<p>OpenAI 干了两个动作：</p>
+<ul>
+<li><strong>10 月</strong>：把上界从 2.371 一把砍到 2.25。</li>
+<li><strong>11 月 27 日</strong>：把下界也抬到 2.25。</li>
+</ul>
+<p>两头一夹，答案就锁死了：<strong>ω = 2.25</strong>。再快，不可能；这个速度，做得到。</p>
+<p>怎么证 "再快不可能"？用反证法。</p>
+<p>思路是：<strong>先假设 "存在更快的算法"，然后推出一个荒唐的结论。</strong></p>
+<p>就像有人说他 3 小时能从北京开到上海。你不用去追他的车，只要证明 "按物理定律这不可能"，他自己就矛盾了。</p>
+<p>他们分了三步。</p>
+<p><strong>第一步，把大问题缩小。</strong></p>
+<p>先证明：如果在任何数字系统里存在更快的算法，那么在一个更小的、数字有限的系统里，也一定存在。</p>
+<p>就像把无限大的算盘，换成只有几颗珠子的小算盘。珠子少了，但 "省步数" 的本事原封不动留着。</p>
+<p><strong>第二步，造一台 "压缩机"。</strong></p>
+<p>把整个计算过程画成一张网，然后用一套特殊的几何工具，证明：如果真的存在更快的算法，那么这张网就能被压得特别特别扁。</p>
+<p>这里的数学细节（三价张量网络、CAT (0) 空间、自由费米子）你<strong>不用懂</strong>，也不用记。你只要知道一件事：</p>
+<p><strong>他们在造一台压缩机，而这台压缩机的唯一用途，是制造矛盾。</strong></p>
+<p><strong>第三步，让压缩机撞墙。</strong></p>
+<p>找一个最简单、而且早就被证明 "至少要占多少地方" 的任务：给几张清单，判断每张单子里的东西有没有重复。</p>
+<p>这个任务有条铁律：每份数据至少要占一块最小的 "体积"。</p>
+<p>可如果假设 "存在更快的矩阵乘法算法"，拿那台压缩机一压，这份数据的体积就会跌穿底线。</p>
+<p>相当于：<strong>100 平方米的砖，塞进了 1 平方米的盒子。</strong></p>
+<p>不可能。所以最初的假设错了。</p>
+<p>证毕。</p>
+<p>这套东西跨了三个数学领域，写了 111 页 —— 不冤。</p>
+<h2 id="五、这次不一样的地方：作者栏没有名字">五、这次不一样的地方：作者栏没有名字</h2>
+<p>以前这种论文，作者栏是一串人名，AI 是工具，名字写在致谢里。就像一道菜，署名是厨师，锅只是锅 —— 没人会把功劳记在一口锅上。</p>
+<p>这次作者栏只有 <strong>OpenAI</strong>，背后干活的是它内部的数学推理模型。</p>
+<p>署名，是锅。</p>
+<p>节奏也很吓人：</p>
+<ul>
+<li>10 月初：上界砍到 2.25</li>
+<li>11 月 27 日：下界封死</li>
+</ul>
+<p><strong>50 多天，两头都堵上了。</strong></p>
+<p>而这 50 天里它干的不是 "再快一点"，是 "宣布到头了"。</p>
+<p>前者叫优化，后者叫测量。</p>
+<h2 id="六、先别急着庆祝">六、先别急着庆祝</h2>
+<p>冷水还是要泼的。</p>
+<p>据这篇报道，111 页的论文现在还是预印本。其中一部分（无除法电路那块）已经通过 Lean 机器验证 ——<strong> 只是部分，不是全文</strong>。剩下的，还要等人类数学家正式同行评审。</p>
+<p>也就是说，现在的状态是：<strong>机器说这一段没问题，人还没读完。</strong></p>
+<p>它也不是孤例。11 月 20 日，Anthropic 刚宣布用 Claude 拿下黎曼猜想；据报道，紧接着又有人宣称搞定了 VP≠VNP—— 那是理论计算机科学里最硬的一道题。</p>
+<p>一周之内，数学界最硬的几块骨头，接连被啃出牙印。</p>
+<p>以前看到这种消息，我第一反应是 "是不是又在公关"。但这次交付物变了：不是新闻稿，是能被机器逐行检查的代码，是 111 页能被同行挑刺的论文。</p>
+<p><strong>吹牛可以骗人，形式化验证骗不了人。</strong></p>
+<h2 id="七、最后">七、最后</h2>
+<p>回到那个被磨了 57 年的数字。</p>
+<p>人类把它从 2.81 磨到 2.371177。小数点后六位，一代人接一代人。</p>
+<p>2026 年的 50 多天里，机器做了两件事：<strong>找到 2.25，然后证明 2.25 就是底线。</strong></p>
+<p>一件是优化，一件是测量。</p>
+<p>咱人类很擅长优化 —— 我们天生会找捷径，会在既有条件里抠出一点点空间。</p>
+<p>但 "证明除了这条路，再没有别的路"，需要的是把整个可能性空间一次看穿。</p>
+<p>那是另一种智力。</p>
+<p>所以这次真正的新闻，不是 "AI 又解了一道题"。</p>
+<p>而是：<strong>过去 57 年，人类一直在跑道上刷成绩；这一次，有人把跑道量完了。</strong></p>
+<p>会跑的人，和能告诉你跑道总长的人，从来不是同一种角色。</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>知行录
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cn-vhql.github.io/2026/11/28/AI%20%E6%B2%A1%E8%B7%91%E6%9B%B4%E5%BF%AB%EF%BC%8C%E5%AE%83%E6%8A%8A%E7%BB%88%E7%82%B9%E7%BA%BF%E7%84%8A%E6%AD%BB%E4%BA%86%EF%BC%9A57%20%E5%B9%B4%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%88%B0%E6%AD%A4%E4%B8%BA%E6%AD%A2/" title="AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止">https://cn-vhql.github.io/2026/11/28/AI 没跑更快，它把终点线焊死了：57 年的矩阵乘法竞赛到此为止/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/11/28/%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%20167%20%E5%B9%B4%EF%BC%9A%E4%BB%8E%208%20%E9%A1%B5%E7%9F%AD%E6%96%87%E5%88%B0%201700%20%E4%B8%87%E8%A1%8C%E4%BB%A3%E7%A0%81/" rel="prev" title="黎曼猜想 167 年：从 8 页短文到 1700 万行代码">
+                  <i class="fa fa-angle-left"></i> 黎曼猜想 167 年：从 8 页短文到 1700 万行代码
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">知行录</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<!-- 自定义脚本：文章题头图 -->
+<script src="/js/banner-image.js"></script>
+
+</body>
+</html>
